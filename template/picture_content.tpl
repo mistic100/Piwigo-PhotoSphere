@@ -36,9 +36,10 @@
     container: document.getElementById('photoSphere'),
     panorama: '{$ROOT_URL}{$current.element_path}',
     default_fov: 60,
+    default_long: {$SPHERE_LONG} * 2*Math.PI - Math.PI/2,
+    default_lat: {$SPHERE_LAT} * Math.PI,
     navbar: true,
     anim_speed: '1.5rpm',
-    time_anim: 0,
     mousewheel: false,
     loading_img: '{$ROOT_URL}{$PHOTOSPHERE_PATH}template/icon.png'
   });

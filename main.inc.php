@@ -56,8 +56,11 @@ else
     EVENT_HANDLER_PRIORITY_NEUTRAL-10, $public_file);
   
   add_event_handler('loc_after_page_header', 'photosphere_admintools',
-    EVENT_HANDLER_PRIORITY_NEUTRAL-10, $public_file);
+    EVENT_HANDLER_PRIORITY_NEUTRAL, $public_file);
   
   add_event_handler('loc_begin_picture', 'photosphere_save_admintools',
-    EVENT_HANDLER_PRIORITY_NEUTRAL-10, $public_file);
+    EVENT_HANDLER_PRIORITY_NEUTRAL, $public_file);
+  
+  add_event_handler('loc_begin_index_thumbnails', 'photosphere_thumbnails_list',
+    EVENT_HANDLER_PRIORITY_NEUTRAL, $public_file);
 }

@@ -9,14 +9,51 @@ function photosphere_element_content($content, $element)
   {
     $template->set_filename('sphere_content', realpath(PHOTOSPHERE_PATH . 'template/picture_content.tpl'));
     
-    $template->assign(array(
-      'PHOTOSPHERE_PATH' => PHOTOSPHERE_PATH
-      ));
+    if ($element['coi'])
+    {
+      $coi = $element['coi'];
+      $template->assign(array(
+        'SPHERE_LONG' => (char_to_fraction($coi[0]) + char_to_fraction($coi[2])) / 2,
+        'SPHERE_LAT' => (1 - char_to_fraction($coi[1]) - char_to_fraction($coi[3])) / 2,
+        ));
+    }
+    else {
+      $template->assign(array(
+        'SPHERE_LONG' => 0.5,
+        'SPHERE_LAT' => 0,
+        ));
+    }
+    
+    $template->assign('PHOTOSPHERE_PATH', PHOTOSPHERE_PATH);
 
     return $template->parse('sphere_content', true);
   }
   
   return $content;
+}
+
+function photosphere_thumbnails_list($pictures)
+{
+  global $template;
+  
+  $template->assign('PHOTOSPHERE_PATH', PHOTOSPHERE_PATH);
+  
+  $template->func_combine_css(array(
+    'id' => 'photosphere-list',
+    'path' => PHOTOSPHERE_PATH . 'template/style-list.css'
+  ));
+  
+  $template->set_prefilter('index_thumbnails', 'loc_begin_index_thumbnails_prefilter');
+}
+
+function loc_begin_index_thumbnails_prefilter($content)
+{
+  $search = '#(<li>|<li class="gthumb">)#';
+  $replace = '$1{strip}
+{if $thumbnail.is_sphere}<a href="{$thumbnail.URL}"><img src="{$ROOT_URL}{$PHOTOSPHERE_PATH}template/icon_sm.png" class="photosphere-icon"></a>{/if}
+{/strip}';
+
+  return preg_replace($search, $replace, $content);
 }
 
 function photosphere_admintools()
