@@ -3,7 +3,7 @@ defined('PHOTOSPHERE_PATH') or die('Hacking attempt!');
 
 function photosphere_element_content($content, $element)
 {
-  global $template;
+  global $template, $conf;
   
   if ($element['is_sphere'])
   {
@@ -24,7 +24,13 @@ function photosphere_element_content($content, $element)
         ));
     }
     
-    $template->assign('PHOTOSPHERE_PATH', PHOTOSPHERE_PATH);
+    $derivative_params = ImageStdParams::get_custom($conf['PhotoSphere']['raw_width'], $conf['PhotoSphere']['raw_width']/2);
+    
+    $template->assign(array(
+      'PhotoSphere' => $conf['PhotoSphere'],
+      'SPHERE_DERIVATIVE' => new DerivativeImage($derivative_params, $element['src_image']),
+      'PHOTOSPHERE_PATH' => PHOTOSPHERE_PATH,
+      ));
 
     return $template->parse('sphere_content', true);
   }
@@ -34,16 +40,14 @@ function photosphere_element_content($content, $element)
 
 function photosphere_thumbnails_list($pictures)
 {
-  global $template;
+  global $template, $conf;
   
-  $template->assign('PHOTOSPHERE_PATH', PHOTOSPHERE_PATH);
-  
-  $template->func_combine_css(array(
-    'id' => 'photosphere-list',
-    'path' => PHOTOSPHERE_PATH . 'template/style-list.css'
-  ));
-  
-  $template->set_prefilter('index_thumbnails', 'loc_begin_index_thumbnails_prefilter');
+  if ($conf['PhotoSphere']['display_icon'])
+  {
+    $template->assign('PHOTOSPHERE_PATH', PHOTOSPHERE_PATH);
+    
+    $template->set_prefilter('index_thumbnails', 'loc_begin_index_thumbnails_prefilter');
+  }
 }
 
 function loc_begin_index_thumbnails_prefilter($content)
@@ -53,6 +57,23 @@ function loc_begin_index_thumbnails_prefilter($content)
 {if $thumbnail.is_sphere}<a href="{$thumbnail.URL}"><img src="{$ROOT_URL}{$PHOTOSPHERE_PATH}template/icon_sm.png" class="photosphere-icon"></a>{/if}
 {/strip}';
 
+  $content.= '
+{html_style}
+#thumbnails li {
+  position:relative !important;
+  display:inline-block;
+}
+.photosphere-icon {
+  width:32px;
+  height:32px;
+  position:absolute;
+  margin:-16px 0 0 -16px;
+  top:50%;
+  left:50%;
+  z-index:100 !important;
+}
+{/html_style}';
+
   return preg_replace($search, $replace, $content);
 }
 
@@ -60,9 +81,13 @@ function photosphere_admintools()
 {
   global $picture, $template;
   
-  if (defined('ADMINTOOLS_PATH') && script_basename() == 'picture')
+  if (defined('ADMINTOOLS_PATH'))
   {
-    $template->assign('ato_QUICK_EDIT_is_sphere', $picture['current']['is_sphere']);
+    if (script_basename() == 'picture')
+    {
+      $template->assign('ato_QUICK_EDIT_is_sphere', $picture['current']['is_sphere']);
+    }
+    
     $template->set_prefilter('ato_public_controller', 'photosphere_admintools_prefilter');
   }
 }

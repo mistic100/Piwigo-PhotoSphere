@@ -1,0 +1,1 @@
+Ajoute un affichage dynamique pour les Photo Spheres.
