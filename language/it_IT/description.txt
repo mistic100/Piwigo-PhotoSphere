@@ -1,0 +1,1 @@
+Aggiunta di un visualizzatore Photo Spheres.
