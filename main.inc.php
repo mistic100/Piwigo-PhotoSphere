@@ -2,7 +2,7 @@
 /*
 Plugin Name: PhotoSphere
 Version: auto
-Description: Add a Photo Sphere viewer
+Description: Add a Photo Spheres viewer.
 Plugin URI: auto
 Author: Mistic
 Author URI: http://www.strangeplanet.fr
@@ -25,13 +25,28 @@ if (basename(dirname(__FILE__)) != 'PhotoSphere')
 
 global $prefixeTable;
 
-define('PHOTOSPHERE_PATH' , PHPWG_PLUGINS_PATH . '/PhotoSphere/');
+define('PHOTOSPHERE_PATH' , PHPWG_PLUGINS_PATH . 'PhotoSphere/');
 define('PHOTOSPHERE_ADMIN', get_root_url() . 'admin.php?page=plugin-PhotoSphere');
 
+
+add_event_handler('init', 'photosphere_init');
+function photosphere_init()
+{
+  global $conf;
+
+  load_language('plugin.lang', PHOTOSPHERE_PATH, array(
+    'force_fallback' => 'en_UK'
+  ));
+
+  $conf['PhotoSphere'] = safe_unserialize($conf['PhotoSphere']);
+}
 
 if (defined('IN_ADMIN'))
 {
   $admin_file = PHOTOSPHERE_PATH . 'include/admin_events.inc.php';
+  
+  add_event_handler('get_admin_plugin_menu_links', 'photosphere_admin_plugin_menu_links',
+    EVENT_HANDLER_PRIORITY_NEUTRAL, $admin_file);
 
   add_event_handler('loc_end_picture_modify', 'photosphere_photo_page',
     EVENT_HANDLER_PRIORITY_NEUTRAL, $admin_file);
@@ -56,7 +71,7 @@ else
     EVENT_HANDLER_PRIORITY_NEUTRAL-10, $public_file);
   
   add_event_handler('loc_after_page_header', 'photosphere_admintools',
-    EVENT_HANDLER_PRIORITY_NEUTRAL, $public_file);
+    EVENT_HANDLER_PRIORITY_NEUTRAL-10, $public_file);
   
   add_event_handler('loc_begin_picture', 'photosphere_save_admintools',
     EVENT_HANDLER_PRIORITY_NEUTRAL, $public_file);

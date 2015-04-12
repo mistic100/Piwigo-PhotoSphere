@@ -1,6 +1,16 @@
 <?php
 defined('PHOTOSPHERE_PATH') or die('Hacking attempt!');
 
+function photosphere_admin_plugin_menu_links($menu)
+{
+  $menu[] = array(
+    'NAME' => 'Photo Sphere',
+    'URL' => PHOTOSPHERE_ADMIN,
+    );
+
+  return $menu;
+}
+
 function photosphere_photo_page()
 {
   global $template;
@@ -42,12 +52,12 @@ function photosphere_photo_page_prefilter($content)
 
 function photosphere_add_prefilter($prefilters)
 {
-	$prefilters[] = array(
+  $prefilters[] = array(
     'ID' => 'is_sphere',
     'NAME' => 'Photo Spheres',
     );
   
-	return $prefilters;
+  return $prefilters;
 }
 
 function photosphere_apply_prefilter($filter_sets, $prefilter)
@@ -58,7 +68,7 @@ function photosphere_apply_prefilter($filter_sets, $prefilter)
     $filter_sets[] = query2array($query, null, 'id');
   }
   
-	return $filter_sets;
+  return $filter_sets;
 }
 
 function photosphere_loc_end_element_set_global()
@@ -67,12 +77,12 @@ function photosphere_loc_end_element_set_global()
 
   $template->append('element_set_global_plugins_actions', array(
     'ID' => 'set_photosphere',
-    'NAME' => 'Set Photo Sphere'
+    'NAME' => l10n('Set Photo Sphere')
     ));
   
   $template->append('element_set_global_plugins_actions', array(
     'ID' => 'unset_photosphere',
-    'NAME' => 'Unset Photo Sphere'
+    'NAME' => l10n('Unset Photo Sphere')
     ));
 }
 
