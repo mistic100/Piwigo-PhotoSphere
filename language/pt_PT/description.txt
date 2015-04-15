@@ -1,0 +1,1 @@
+Adicionar um visualizador "Photo Sphere".
