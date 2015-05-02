@@ -34,9 +34,16 @@ function photosphere_init()
 {
   global $conf;
 
-  load_language('plugin.lang', PHOTOSPHERE_PATH, array(
-    'force_fallback' => 'en_UK'
-  ));
+  if (defined('IN_ADMIN'))
+  {
+    load_language('plugin.lang', PHOTOSPHERE_PATH, array(
+      'force_fallback' => 'en_UK'
+    ));
+  }
+  else
+  {
+    load_language('plugin.lang', PHOTOSPHERE_PATH);
+  }
 
   $conf['PhotoSphere'] = safe_unserialize($conf['PhotoSphere']);
 }

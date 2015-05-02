@@ -32,12 +32,13 @@
     min_fov: 50,
     default_long: $sphere.data('long') * 2*Math.PI - Math.PI/2,
     default_lat: $sphere.data('lat') * Math.PI,
-    navbar: true,
+    navbar: 'autorotate zoom fullscreen',
     anim_speed: '1.5rpm',
     mousewheel: false,
     loading_img: PHOTOSPHERE.PATH + 'template/icon.png',
     caption: PHOTOSPHERE.caption,
-    time_anim: PHOTOSPHERE.time_anim
+    time_anim: PHOTOSPHERE.time_anim,
+    lang: PHOTOSPHERE.lang
   });
   
   window.psv.pwgResize = resize;
