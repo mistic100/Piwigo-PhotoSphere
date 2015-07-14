@@ -23,3 +23,6 @@
 $lang['Loading'] = 'Lataa';
 $lang['Zoom in'] = 'Lähennä';
 $lang['Zoom out'] = 'Loitonna';
+$lang['Automatic rotation'] = 'Automaattinen rotaatio';
+$lang['Automatically launch animation'] = 'Käynnistä animaatio automaattisesti';
+$lang['Between 1024px and 8192px.'] = '1024px and 8192px välissä.';
