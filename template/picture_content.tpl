@@ -1,4 +1,7 @@
 {combine_script id='three' path=$PHOTOSPHERE_PATH|cat:'template/lib/three.min.js' load='async'}
+{combine_script id='D' path=$PHOTOSPHERE_PATH|cat:'template/lib/D.min.js' load='async'}
+{combine_script id='doT' path=$PHOTOSPHERE_PATH|cat:'template/lib/doT.min.js' load='async'}
+{combine_script id='uevent' path=$PHOTOSPHERE_PATH|cat:'template/lib/uevent.min.js' load='async'}
 {combine_script id='three-canvasrenderer' path=$PHOTOSPHERE_PATH|cat:'template/lib/CanvasRenderer.js' load='async'}
 {combine_script id='three-projector' path=$PHOTOSPHERE_PATH|cat:'template/lib/Projector.js' load='async'}
 {combine_script id='photo-sphere-viewer' path=$PHOTOSPHERE_PATH|cat:'template/lib/photo-sphere-viewer.min.js' load='async' require='three'}
