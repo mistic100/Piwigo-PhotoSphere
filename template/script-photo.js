@@ -12,15 +12,16 @@
     $sphere.css({
       height: Math.min(width * 0.7, maxHeight)
     });
+    
+    if (window.psv) {
+      window.psv._onResize();
+    }
   }
   
   $(window).on('resize', resize);
   
   $(document).on('click', '.switchArrow', function() {
-    setTimeout(function() {
-      resize();
-      psv._onResize();
-    }, 10);
+    setTimeout(resize, 10);
   });
   
   resize();
