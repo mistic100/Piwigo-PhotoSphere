@@ -31,3 +31,8 @@ $lang['Bigger textures will take longer to load but smaller textures will result
 $lang['Automatically launch animation'] = 'Iniciará automáticamente la animación';
 $lang['Display help message'] = 'Mostrar mensaje de ayuda ';
 $lang['Between 1024px and 8192px.'] = 'Entre 1024px y 8192px.';
+$lang['Fullscreen'] = 'Pantalla completa';
+$lang['Zoom'] = 'Zoom';
+$lang['Zoom in'] = 'Agrandar el zoom';
+$lang['Zoom out'] = 'Disminuir el zoom';
+$lang['Automatic rotation'] = 'Rotación automática';

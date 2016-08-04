@@ -2,7 +2,7 @@
 // +-----------------------------------------------------------------------+
 // | Piwigo - a PHP based photo gallery                                    |
 // +-----------------------------------------------------------------------+
-// | Copyright(C) 2008-2014 Piwigo Team                  http://piwigo.org |
+// | Copyright(C) 2008-2015 Piwigo Team                  http://piwigo.org |
 // | Copyright(C) 2003-2008 PhpWebGallery Team    http://phpwebgallery.net |
 // | Copyright(C) 2002-2003 Pierrick LE GALL   http://le-gall.net/pierrick |
 // +-----------------------------------------------------------------------+
@@ -20,19 +20,9 @@
 // | Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, |
 // | USA.                                                                  |
 // +-----------------------------------------------------------------------+
-$lang['Automatically launch animation'] = 'Animasyonu otomatik olarak başlat';
-$lang['Between 1024px and 8192px.'] = '1024px ile 8192px arasında';
-$lang['Bigger textures will take longer to load but smaller textures will result in blurry sphere.'] = 'Büyük dokuların yüklemesi daha uzun sürer ama daha küçük dokular bulanık küreye neden olacaktır.';
-$lang['Display Photo Sphere icon on thumbnails list'] = 'Fotoğraf Küresi ikonunu küçük resimlerde göster';
-$lang['Display help message'] = 'Yardım mesajını görüntüle';
-$lang['Drag and drop to navigate in the photo.'] = 'Fotoğrafta gezinmek için sürükle bırak';
-$lang['Loading'] = 'Yükleniyor';
-$lang['Set Photo Sphere'] = 'Fotoğraf Küresi ayarla/kur';
-$lang['Sphere texture size'] = 'Küre doku büyüklüğü';
-$lang['Unset Photo Sphere'] = 'Fotoraf Küresi ayarını kaldır';
-$lang['photosphere_config_intro'] = 'Bir fotoğrafın üzerinde Fotoğraf Küresi kullanmak için, kendi özellikleri sayfasında "Fotoğraf Küresi" kontrol edin. Ayrıca toplu yöneticiyi kullanabilir ve ayrıca Yönetici Araçları eklentisindeki Hızlı Düzenle seçeneğini de kullanabilirsiniz.';
-$lang['Automatic rotation'] = 'Otomatik döndürme';
-$lang['Fullscreen'] = 'Tam ekran';
-$lang['Zoom'] = 'Yakınlaştırma';
-$lang['Zoom in'] = 'Yakınlaştır';
-$lang['Zoom out'] = 'Uzaklaştır';
+$lang['Loading'] = 'Lataa';
+$lang['Zoom in'] = 'Lähennä';
+$lang['Zoom out'] = 'Loitonna';
+$lang['Automatic rotation'] = 'Automaattinen rotaatio';
+$lang['Automatically launch animation'] = 'Käynnistä animaatio automaattisesti';
+$lang['Between 1024px and 8192px.'] = '1024px and 8192px välissä.';

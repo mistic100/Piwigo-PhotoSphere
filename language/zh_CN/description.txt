@@ -1,0 +1,1 @@
+添加 Photo Sphere 全景照片查看器。
