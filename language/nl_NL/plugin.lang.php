@@ -21,18 +21,18 @@
 // | USA.                                                                  |
 // +-----------------------------------------------------------------------+
 $lang['Automatically launch animation'] = 'Start animatie automatisch';
-$lang['Bigger textures will take longer to load but smaller textures will result in blurry sphere.'] = 'Grotere texturen zullen langer duren om te laden, maar kleinere texturen zal resulteren in onscherpe sphere.';
-$lang['Display Photo Sphere icon on thumbnails list'] = 'Geef het Photo Sphere icoon weer in de klikplaatjeslijst ';
-$lang['Display help message'] = 'Geef helpbericht weer';
+$lang['Bigger textures will take longer to load but smaller textures will result in blurry sphere.'] = 'Grotere texturen duren langer te laden, maar kleinere texturen resulteren in onscherpe foto\'s.';
+$lang['Display Photo Sphere icon on thumbnails list'] = 'Toon het Photo Sphere icoon in de klikplaatjeslijst ';
+$lang['Display help message'] = 'Toon help';
 $lang['Drag and drop to navigate in the photo.'] = 'Slepen en neerzetten om in de foto te navigeren.';
 $lang['Loading'] = 'Bezig met laden';
 $lang['Set Photo Sphere'] = 'Schakel Phote Sphere in';
 $lang['Sphere texture size'] = 'Sphere textuurgrootte';
 $lang['Unset Photo Sphere'] = 'Schakel Phote Sphere uit';
-$lang['photosphere_config_intro'] = 'Om Photo Sphere op een foto te kunnen gebruiken, vinkt u "Photo Sphere" aan op de eigenschappenpagina. U kunt ook gebruik maken van de batch-manager. En u kunt ook gebruik maken van de Quick Edit van de Admin Tools plugin.';
+$lang['photosphere_config_intro'] = 'Om Photo Sphere op een foto te kunnen gebruiken, vink je op de eigenschappenpagina "Photo Sphere" aan. Je kunt ook gebruik maken van de batch-manager. En je kunt ook gebruik maken van de Quick Edit van de Admin Tools plugin.';
 $lang['Between 1024px and 8192px.'] = 'Tussen 1024px en 8192px.';
 $lang['Automatic rotation'] = 'Automatische rotatie';
-$lang['Fullscreen'] = 'Volledig Scherm';
+$lang['Fullscreen'] = 'Volledig scherm';
 $lang['Zoom'] = 'Zoom';
 $lang['Zoom in'] = 'Inzoomen';
 $lang['Zoom out'] = 'Uitzoomen';
