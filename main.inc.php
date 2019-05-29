@@ -58,7 +58,6 @@ function photosphere_format_exif_data($exif, $filename, $map)
 		$query = "UPDATE ".IMAGES_TABLE." SET is_sphere = 1 WHERE path = '".$filename."';";
 		pwg_query($query);
 	}
-	file_put_contents('/var/log/tmp/piwigo.log', var_export($json_exif, true).$query);
 
 	return $exif;
 }
