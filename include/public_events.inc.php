@@ -4,8 +4,13 @@ defined('PHOTOSPHERE_PATH') or die('Hacking attempt!');
 function photosphere_element_content($content, $element)
 {
   global $template, $conf;
-  $exif = @json_decode(shell_exec('exiftool -json '.$element['path']), true)[0];
-  if ($element['is_sphere'] || (isset($exif['UsePanoramaViewer']) && $exif['UsePanoramaViewer']))
+  if (!$element['is_sphere'])
+  {
+    $exif = json_decode(shell_exec('exiftool -json '.$element['path']), true)[0];
+    if (isset($exif['UsePanoramaViewer']) && $exif['UsePanoramaViewer'])
+      $element['is_sphere'] = true;
+  }
+  if ($element['is_sphere'])
   {
     $template->set_filename('sphere_content', realpath(PHOTOSPHERE_PATH . 'template/picture_content.tpl'));
     

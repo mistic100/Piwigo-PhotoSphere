@@ -48,6 +48,21 @@ function photosphere_init()
   $conf['PhotoSphere'] = safe_unserialize($conf['PhotoSphere']);
 }
 
+add_event_handler('format_exif_data', 'photosphere_format_exif_data', EVENT_HANDLER_PRIORITY_NEUTRAL, 4);
+function photosphere_format_exif_data($exif, $filename, $map)
+{
+	$filename = str_replace('././', './', $filename);
+	$json_exif = json_decode(shell_exec('exiftool -json '.$filename), true)[0];
+	if (isset($json_exif['UsePanoramaViewer']) && $json_exif['UsePanoramaViewer'])
+	{
+		$query = "UPDATE ".IMAGES_TABLE." SET is_sphere = 1 WHERE path = '".$filename."';";
+		pwg_query($query);
+	}
+	file_put_contents('/var/log/tmp/piwigo.log', var_export($json_exif, true).$query);
+
+	return $exif;
+}
+
 if (defined('IN_ADMIN'))
 {
   $admin_file = PHOTOSPHERE_PATH . 'include/admin_events.inc.php';
