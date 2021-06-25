@@ -1,5 +1,5 @@
 {combine_script id='doT' path=$PHOTOSPHERE_PATH|cat:'template/lib/doT.min.js' load='async'}
-{combine_script id='uevent' path=$PHOTOSPHERE_PATH|cat:'template/lib/uevent.js' load='async'}
+{combine_script id='uevent' path=$PHOTOSPHERE_PATH|cat:'template/lib/browser.js' load='async'}
 {combine_script id='D' path=$PHOTOSPHERE_PATH|cat:'template/lib/D.min.js' load='async'}
 {combine_script id='three' path=$PHOTOSPHERE_PATH|cat:'template/lib/three.min.js' load='async'}
 {combine_script id='three-canvasrenderer' path=$PHOTOSPHERE_PATH|cat:'template/lib/CanvasRenderer.js' load='async'}
