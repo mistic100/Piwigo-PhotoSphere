@@ -1,6 +1,6 @@
 {combine_script id='uevent' path=$PHOTOSPHERE_PATH|cat:'template/lib/browser.js' load='async'}
 {combine_script id='three' path=$PHOTOSPHERE_PATH|cat:'template/lib/three.min.js' load='async'}
-{combine_script id='photo-sphere-viewer' path=$PHOTOSPHERE_PATH|cat:'template/lib/photo-sphere-viewer.js' load='async' require='three'}
+{combine_script id='photo-sphere-viewer' path=$PHOTOSPHERE_PATH|cat:'template/lib/photo-sphere-viewer.js' load='async' require='three,uevent'}
 {combine_script id='pwgPSV' path=$PHOTOSPHERE_PATH|cat:'template/script-photo.js' load='async' require='photo-sphere-viewer'}
 
 {combine_css id='photo-sphere-viewer' path=$PHOTOSPHERE_PATH|cat:'template/lib/photo-sphere-viewer.css'}
