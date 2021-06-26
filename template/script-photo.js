@@ -36,7 +36,7 @@
     navbar: 'autorotate zoom fullscreen',
     autorotateSpeed: '1.5rpm',
     mousewheel: false,
-    loadingImg: PHOTOSPHERE.PATH + 'template/icon.png',
+    //loadingImg: PHOTOSPHERE.PATH + 'template/icon.png',
     caption: PHOTOSPHERE.caption,
     autorotateDelay: PHOTOSPHERE.time_anim,
     lang: PHOTOSPHERE.lang
