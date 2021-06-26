@@ -29,6 +29,7 @@
   window.psv = new PhotoSphereViewer.Viewer({
     container: $sphere[0],
     panorama: $sphere.data('src'),
+    defaultZoomLvl: 80,
     minFov: 50,
     defaultLong: $sphere.data('long') * 2*Math.PI - Math.PI/2,
     defaultLat: $sphere.data('lat') * Math.PI,
@@ -37,7 +38,7 @@
     mousewheel: false,
     loadingImg: PHOTOSPHERE.PATH + 'template/icon.png',
     caption: PHOTOSPHERE.caption,
-    time_anim: PHOTOSPHERE.time_anim,
+    autorotateDelay: PHOTOSPHERE.time_anim,
     lang: PHOTOSPHERE.lang
   });
 
