@@ -17,7 +17,7 @@ function photosphere_photo_page()
   
   if (isset($_POST['submit']))
   {
-    $row['is_sphere'] = isset($_POST['is_sphere']);
+    $row['is_sphere'] = intval ( isset($_POST['is_sphere']) ) ;
     
     single_update(
       IMAGES_TABLE,
