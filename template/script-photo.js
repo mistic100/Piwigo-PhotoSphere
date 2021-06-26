@@ -14,7 +14,7 @@
     });
     
     if (window.psv) {
-      window.psv._onResize();
+      window.psv.autoSize();
     }
   }
   
@@ -26,21 +26,17 @@
   
   resize();
   
-  window.psv = new PhotoSphereViewer({
-    container: $sphere[0],
+  window.psv = new PhotoSphereViewer.Viewer({
+    container: 'photoSphere',
     panorama: $sphere.data('src'),
-    default_fov: 80,
-    min_fov: 50,
-    default_long: $sphere.data('long') * 2*Math.PI - Math.PI/2,
-    default_lat: $sphere.data('lat') * Math.PI,
-    navbar: 'autorotate zoom fullscreen',
-    anim_speed: '1.5rpm',
+    defaultLong: $sphere.data('long') * 2*Math.PI - Math.PI/2,
+    defaultLat: $sphere.data('lat') * Math.PI,
+    navbar: 'autorotate zoom caption fullscreen',
+    autorotateSpeed: '1.5rpm',
     mousewheel: false,
-    loading_img: PHOTOSPHERE.PATH + 'template/icon.png',
+    loadingImg: PHOTOSPHERE.PATH + 'template/icon.png',
     caption: PHOTOSPHERE.caption,
-    time_anim: PHOTOSPHERE.time_anim,
+    autorotateDelay: PHOTOSPHERE.autorotateDelay,
     lang: PHOTOSPHERE.lang
   });
-  
-  window.psv.pwgResize = resize;
 }());

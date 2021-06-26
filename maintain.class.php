@@ -4,7 +4,7 @@ defined('PHPWG_ROOT_PATH') or die('Hacking attempt!');
 class PhotoSphere_maintain extends PluginMaintain
 {
   private $default_conf = array(
-    'raw_width' => 6144,
+    'raw_width' => 8192,
     'display_help' => true,
     'auto_anim' => true,
     'display_icon' => true,
