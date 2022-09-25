@@ -29,7 +29,7 @@
   window.psv = new PhotoSphereViewer.Viewer({
     container: 'photoSphere',
     panorama: $sphere.data('src'),
-    defaultLong: $sphere.data('long') * 2*Math.PI - Math.PI/2,
+    defaultLong: $sphere.data('long') * 2*Math.PI - Math.PI,
     defaultLat: $sphere.data('lat') * Math.PI,
     navbar: 'autorotate zoom caption fullscreen',
     autorotateSpeed: '1.5rpm',
