@@ -113,7 +113,7 @@ function photosphere_save_admintools()
   
     single_update(
       IMAGES_TABLE,
-      array('is_sphere' => isset($_POST['is_sphere'])),
+      array('is_sphere' => intval(isset($_POST['is_sphere']))),
       array('id' => $page['image_id'])
       );
   }
