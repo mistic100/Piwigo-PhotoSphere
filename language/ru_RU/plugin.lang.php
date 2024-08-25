@@ -26,7 +26,6 @@ $lang['Bigger textures will take longer to load but smaller textures will result
 $lang['Display Photo Sphere icon on thumbnails list'] = 'Отображение иконки Photo Sphere в списке миниатюр';
 $lang['Display help message'] = 'Отображение подсказки помощи';
 $lang['Drag and drop to navigate in the photo.'] = 'Перетаскивание (Drag and drop) для перемещения по фотографии.';
-$lang['Loading'] = 'Загрузка';
 $lang['Set Photo Sphere'] = 'Установки Photo Sphere';
 $lang['Sphere texture size'] = 'Размер текстуры сферы';
 $lang['Unset Photo Sphere'] = 'Сброс установок Photo Sphere';

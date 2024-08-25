@@ -29,7 +29,6 @@ $lang['Display Photo Sphere icon on thumbnails list'] = '在缩略图列表中�
 $lang['Display help message'] = '显示帮助信息';
 $lang['Drag and drop to navigate in the photo.'] = '使用鼠标拖放在照片中转向。';
 $lang['Fullscreen'] = '全屏';
-$lang['Loading'] = '加载中';
 $lang['Set Photo Sphere'] = '设置 Photo Sphere';
 $lang['Sphere texture size'] = '球面纹理尺寸';
 $lang['Unset Photo Sphere'] = '重置 Photo Sphere';

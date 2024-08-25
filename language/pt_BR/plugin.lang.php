@@ -25,7 +25,6 @@ $lang['Unset Photo Sphere'] = 'Desabilitar Foto Esfera';
 $lang['Sphere texture size'] = 'Tamanho da tesxtura Esfera';
 $lang['Set Photo Sphere'] = 'Definir Foto Esfera';
 $lang['Display Photo Sphere icon on thumbnails list'] = 'Mostrar ícone Foto Esfera na lista de miniaturas';
-$lang['Loading'] = 'Carregando';
 $lang['Drag and drop to navigate in the photo.'] = 'Arraste e solte para navegar na foto.';
 $lang['Display help message'] = 'Apresentar mensagem de ajuda';
 $lang['Bigger textures will take longer to load but smaller textures will result in blurry sphere.'] = 'Texturas maiores levarão mais tempo para carregar, mas texturas menores resultará na esfera borrada.';

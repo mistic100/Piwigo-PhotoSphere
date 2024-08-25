@@ -26,7 +26,6 @@ $lang['Between 1024px and 8192px.'] = 'Entre 1024px i 8192';
 $lang['Display Photo Sphere icon on thumbnails list'] = 'Visualitza l\'icona de Photo Sphere en la llista de miniatures';
 $lang['Display help message'] = 'Visualitza missatge d\'ajuda';
 $lang['Drag and drop to navigate in the photo.'] = 'Clica i arrastra per navegar en la foto.';
-$lang['Loading'] = 'S\'està carregant';
 $lang['Set Photo Sphere'] = 'Configura Photo Sphere';
 $lang['Sphere texture size'] = 'Mida de la textura de l\'esfera';
 $lang['Unset Photo Sphere'] = 'Desconfigura Photo Sphere';

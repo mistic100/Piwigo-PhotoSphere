@@ -24,7 +24,6 @@ $lang['Unset Photo Sphere'] = 'Non impostare Photo Sphere';
 $lang['photosphere_config_intro'] = 'Per utilizzare Photo Sphere su una foto, controlla "Photo Sphere" nella sua pagina di proprietà. Puoi inoltre utilizzare il batch manager. Puoi anche utilizzare il Quick Edit del Admin Tools plugin.';
 $lang['Sphere texture size'] = 'Dimensioni texture sfera';
 $lang['Set Photo Sphere'] = 'Imposta Photo Sphere';
-$lang['Loading'] = 'Caricamento';
 $lang['Drag and drop to navigate in the photo.'] = 'Clicca e trascina per navigare tra le foto';
 $lang['Display help message'] = 'Mostra messaggio di aiuto';
 $lang['Display Photo Sphere icon on thumbnails list'] = 'Mostra l\'icona Photo Sphere sulla lista miniature';

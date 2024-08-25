@@ -23,7 +23,6 @@
 $lang['photosphere_config_intro'] = 'Lai izmantotu Foto Sfŗu uz fotoattēla, pārbaudiet "Photo Sphere" tās rekvizītu lapā. Varat izmantot arī virknes pārvaldnieku, vai Quick Edit Administratora Rīku spraudnī.';
 $lang['Bigger textures will take longer to load but smaller textures will result in blurry sphere.'] = 'Lielākām tekstūrām būs vajadzīgs ilgāks laiks, lai ielādētos, bet mazākas tekstūras radīs neskaidru sfēru.';
 $lang['Drag and drop to navigate in the photo.'] = '"Velciet un nometiet", lai navigētu foto.';
-$lang['Loading'] = 'Ielādēšana';
 $lang['Zoom out'] = 'Attālināt';
 $lang['Zoom in'] = 'Pietuvināt';
 $lang['Zoom'] = 'Tālummaiņa';

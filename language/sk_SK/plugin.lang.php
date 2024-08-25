@@ -27,7 +27,6 @@ $lang['Drag and drop to navigate in the photo.'] = 'Drag and drop pre navigáciu
 $lang['Unset Photo Sphere'] = 'Vymazať sférickú fotku';
 $lang['Sphere texture size'] = 'Veľkosť sférickej textúry';
 $lang['Set Photo Sphere'] = 'Nastaviť sférickú fotku';
-$lang['Loading'] = 'Nahrávanie';
 $lang['Display help message'] = 'Zobrazí nápovedu';
 $lang['Between 1024px and 8192px.'] = 'Medzi 1024px a 8192px.';
 $lang['Automatically launch animation'] = 'Automaticky spustí animáciu';

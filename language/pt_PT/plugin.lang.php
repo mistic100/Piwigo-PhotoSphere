@@ -24,7 +24,6 @@ $lang['photosphere_config_intro'] = 'Para usar o "Photo Sphere" numa foto, veja 
 $lang['Unset Photo Sphere'] = 'Cancelar definição "Photo Sphere"';
 $lang['Sphere texture size'] = 'Dimensão da textura da esfera';
 $lang['Set Photo Sphere'] = 'Definir "Photo Sphere"';
-$lang['Loading'] = 'A carregar';
 $lang['Drag and drop to navigate in the photo.'] = 'Arraste e solte para navegar na foto.';
 $lang['Display help message'] = 'Mostra mensagem de ajuda';
 $lang['Display Photo Sphere icon on thumbnails list'] = 'Mostrar ícone "Photo Sphere" na lista de "thumbnails" (imagens pequenas)';

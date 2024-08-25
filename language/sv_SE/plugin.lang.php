@@ -29,7 +29,6 @@ $lang['Bigger textures will take longer to load but smaller textures will result
 $lang['Display Photo Sphere icon on thumbnails list'] = 'Visa Photo Spheres ikon i miniatyrlistan';
 $lang['Display help message'] = 'Visa hjälpmeddelande';
 $lang['Drag and drop to navigate in the photo.'] = 'Dra och släpp för att navigera i bilden';
-$lang['Loading'] = 'Laddar';
 $lang['Sphere texture size'] = 'Sfärens texturstorlek';
 $lang['Automatic rotation'] = 'Automatisk rotation';
 $lang['Fullscreen'] = 'Fullskärm';

@@ -26,7 +26,6 @@ $lang['Bigger textures will take longer to load but smaller textures will result
 $lang['Display Photo Sphere icon on thumbnails list'] = 'Prikaži ikono Sfera slike (Photo Sphere) na seznamu sličic';
 $lang['Display help message'] = 'Prikaži sporočilo pomoči';
 $lang['Drag and drop to navigate in the photo.'] = 'Povleci in spusti za premikanje v sliki';
-$lang['Loading'] = 'Nalaganje';
 $lang['Set Photo Sphere'] = 'Nastavi Sfero slike (Photo Sphere)';
 $lang['Sphere texture size'] = 'Velikost teksture v sferi';
 $lang['Unset Photo Sphere'] = 'Odstrani nastavitev Sfere slike';

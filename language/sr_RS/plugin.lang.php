@@ -28,7 +28,6 @@ $lang['Display Photo Sphere icon on thumbnails list'] = 'Прикажи икон
 $lang['Display help message'] = 'Прикажи поруку за помоћ';
 $lang['Drag and drop to navigate in the photo.'] = 'Превуците приказ да се прошетате кроз слику.';
 $lang['Fullscreen'] = 'Цео екран';
-$lang['Loading'] = 'Учитавам';
 $lang['Set Photo Sphere'] = 'Постави Фото-сферу';
 $lang['Sphere texture size'] = 'Величина текстуре за сферу';
 $lang['Unset Photo Sphere'] = 'Врати Фото-сферу';

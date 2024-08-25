@@ -25,7 +25,6 @@ $lang['Bigger textures will take longer to load but smaller textures will result
 $lang['Display Photo Sphere icon on thumbnails list'] = 'Toon het Photo Sphere icoon in de klikplaatjeslijst ';
 $lang['Display help message'] = 'Toon help';
 $lang['Drag and drop to navigate in the photo.'] = 'Slepen en neerzetten om in de foto te navigeren.';
-$lang['Loading'] = 'Bezig met laden';
 $lang['Set Photo Sphere'] = 'Schakel Phote Sphere in';
 $lang['Sphere texture size'] = 'Sphere textuurgrootte';
 $lang['Unset Photo Sphere'] = 'Schakel Phote Sphere uit';

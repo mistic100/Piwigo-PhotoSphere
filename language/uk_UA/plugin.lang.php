@@ -29,7 +29,6 @@ $lang['Display help message'] = 'Показувати повідомлення �
 $lang['Display Photo Sphere icon on thumbnails list'] = 'Показувати іконку Фотосфери у переліку мініатюр';
 $lang['Bigger textures will take longer to load but smaller textures will result in blurry sphere.'] = 'Великі текстури будуть довше завантажуватися але маленькі текстури призведуть до розмиття сфери.';
 $lang['Between 1024px and 8192px.'] = 'Поміж 1024px та 8192px.';
-$lang['Loading'] = 'Завантаження';
 $lang['Automatically launch animation'] = 'Автоматично запускати анімацію';
 $lang['Zoom'] = 'Масштаб';
 $lang['Zoom out'] = 'Зменшити';

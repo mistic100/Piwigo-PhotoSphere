@@ -19,5 +19,4 @@ $lang['Display Photo Sphere icon on thumbnails list'] = 'Birta hringmyndartákn 
 $lang['Display help message'] = 'Birta hjálparskilaboð';
 $lang['Drag and drop to navigate in the photo.'] = 'Dragðu og slepptu til að fletta í myndinni.';
 $lang['Fullscreen'] = 'Fullskjár';
-$lang['Loading'] = 'Hleðsla';
 $lang['Set Photo Sphere'] = 'Stilltu hringmynd';

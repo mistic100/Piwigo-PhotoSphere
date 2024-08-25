@@ -26,7 +26,6 @@ $lang['Bigger textures will take longer to load but smaller textures will result
 $lang['Display Photo Sphere icon on thumbnails list'] = 'Zobraz ikonu Foto Sféry v náhledech';
 $lang['Display help message'] = 'Zobraz zprávu nápovědy';
 $lang['Drag and drop to navigate in the photo.'] = 'Drag and Drop pro navigaci v fotce.';
-$lang['Loading'] = 'Nahrávání';
 $lang['Set Photo Sphere'] = 'Nastav Foto Sféru';
 $lang['Sphere texture size'] = 'Velikost textury Sféry';
 $lang['Unset Photo Sphere'] = 'Odeber Foto Sféru';

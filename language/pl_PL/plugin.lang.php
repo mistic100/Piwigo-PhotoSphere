@@ -28,7 +28,6 @@ $lang['Display Photo Sphere icon on thumbnails list'] = 'Pokaż ikonę Photo Sph
 $lang['Display help message'] = 'Pokaż tekst pomocy';
 $lang['Drag and drop to navigate in the photo.'] = 'Przeciągnij i upuść, by nawigować między zdjęciami';
 $lang['Fullscreen'] = 'Pełny ekran';
-$lang['Loading'] = 'Ładowanie';
 $lang['Set Photo Sphere'] = 'Włącz Photo Sphere';
 $lang['Sphere texture size'] = 'Rozmiar tekstury kuli';
 $lang['Unset Photo Sphere'] = 'Wyłącz Photo Sphere';

@@ -23,7 +23,6 @@
 $lang['Between 1024px and 8192px.'] = 'Mellom 1024px og 8192px';
 $lang['Display help message'] = 'Vis hjelpebeskjed';
 $lang['Fullscreen'] = 'Fullskjerm';
-$lang['Loading'] = 'Laster';
 $lang['Zoom'] = 'Zoom';
 $lang['Zoom in'] = 'Zoom inn';
 $lang['Zoom out'] = 'Zoom ut';

@@ -26,7 +26,6 @@ $lang['Bigger textures will take longer to load but smaller textures will result
 $lang['Display Photo Sphere icon on thumbnails list'] = 'Hiện biểu tượng Quả cầu ảnh ở danh sách ảnh đại diện';
 $lang['Display help message'] = 'Hiện thông báo giúp đỡ';
 $lang['Drag and drop to navigate in the photo.'] = 'Kéo và thả để thao tác trong hình ảnh.';
-$lang['Loading'] = 'Đang tải';
 $lang['Set Photo Sphere'] = 'Đặt Quả cầu ảnh';
 $lang['Sphere texture size'] = 'Kích thước chữ Quả cầu';
 $lang['Unset Photo Sphere'] = 'Gỡ bỏ Quả cầu ảnh';

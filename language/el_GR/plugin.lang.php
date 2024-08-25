@@ -24,7 +24,6 @@ $lang['photosphere_config_intro'] = 'Για να χρησιμοποιήσετε 
 $lang['Unset Photo Sphere'] = 'Απενεργοποίηση Photosphere';
 $lang['Sphere texture size'] = 'Μέγεθος υφής Σφαίρας';
 $lang['Set Photo Sphere'] = 'Ρύθμιση του Photo Sphere';
-$lang['Loading'] = 'Φόρτωση';
 $lang['Drag and drop to navigate in the photo.'] = 'Drag and drop για να πλοηγηθείτε στη φωτογραφία.';
 $lang['Display help message'] = 'Εμφάνιση μηνύματος βοήθειας';
 $lang['Display Photo Sphere icon on thumbnails list'] = 'Η Εμφάνιση του εικονιδίου του Photosphere στη λίστα μικρογραφιών.';

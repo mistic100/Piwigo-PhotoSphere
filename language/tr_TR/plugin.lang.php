@@ -26,7 +26,6 @@ $lang['Bigger textures will take longer to load but smaller textures will result
 $lang['Display Photo Sphere icon on thumbnails list'] = 'Fotoğraf Küresi ikonunu küçük resimlerde göster';
 $lang['Display help message'] = 'Yardım mesajını görüntüle';
 $lang['Drag and drop to navigate in the photo.'] = 'Fotoğrafta gezinmek için sürükle bırak';
-$lang['Loading'] = 'Yükleniyor';
 $lang['Set Photo Sphere'] = 'Fotoğraf Küresi ayarla/kur';
 $lang['Sphere texture size'] = 'Küre doku büyüklüğü';
 $lang['Unset Photo Sphere'] = 'Fotoraf Küresi ayarını kaldır';

@@ -24,7 +24,6 @@ $lang['photosphere_config_intro'] = 'За да използвате Photo Sphere
 $lang['Unset Photo Sphere'] = 'Отказ от Photo Sphere';
 $lang['Sphere texture size'] = 'Големина на текстурите на сферата';
 $lang['Set Photo Sphere'] = 'Задаване на Photo Sphere';
-$lang['Loading'] = 'Зареждане';
 $lang['Drag and drop to navigate in the photo.'] = 'Плъзнете и пуснете, за да навигирате в снимката.';
 $lang['Display help message'] = 'Показване на съобщение за помощ';
 $lang['Display Photo Sphere icon on thumbnails list'] = 'Показване иконата на Photo Sphere в списъка с миниатюри';

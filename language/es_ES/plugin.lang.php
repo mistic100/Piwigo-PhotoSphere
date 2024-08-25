@@ -24,7 +24,6 @@ $lang['photosphere_config_intro'] = 'Para utilizar Photo Sphere en una foto, uti
 $lang['Unset Photo Sphere'] = 'Desconfigurar Photo Sphere';
 $lang['Sphere texture size'] = 'Tamaño de la textura de Sphere';
 $lang['Set Photo Sphere'] = 'Configurar Photo Sphere';
-$lang['Loading'] = 'Cargando';
 $lang['Drag and drop to navigate in the photo.'] = 'Seleccionar y soltar para navegar en la photo';
 $lang['Display Photo Sphere icon on thumbnails list'] = 'Mostrar el icono de Photo Sphere en la lista de miniaturas';
 $lang['Bigger textures will take longer to load but smaller textures will result in blurry sphere.'] = 'Texturas más grandes tardan más en cargar pero texturas menores crean esfera borrosa.';
