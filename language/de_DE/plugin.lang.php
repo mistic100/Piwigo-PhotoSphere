@@ -35,3 +35,7 @@ $lang['Fullscreen'] = 'Vollbild';
 $lang['Zoom'] = 'Zoom';
 $lang['Zoom in'] = 'vergrößern';
 $lang['Zoom out'] = 'verkleinern';
+$lang['Move right'] = 'Nach rechts bewegen';
+$lang['Move up'] = 'Nach oben gehen';
+$lang['Move down'] = 'Nach unten gehen';
+$lang['Move left'] = 'Nach links bewegen';
