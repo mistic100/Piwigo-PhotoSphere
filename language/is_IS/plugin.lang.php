@@ -20,3 +20,7 @@ $lang['Display help message'] = 'Birta hjálparskilaboð';
 $lang['Drag and drop to navigate in the photo.'] = 'Dragðu og slepptu til að fletta í myndinni.';
 $lang['Fullscreen'] = 'Fullskjár';
 $lang['Set Photo Sphere'] = 'Stilltu hringmynd';
+$lang['Move down'] = 'Færa niður';
+$lang['Move left'] = 'Færa til vinstri';
+$lang['Move right'] = 'Færa til hægri';
+$lang['Move up'] = 'Færa upp';
