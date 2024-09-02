@@ -35,3 +35,7 @@ $lang['Set Photo Sphere'] = 'Innstilling av Bilde område';
 $lang['Sphere texture size'] = 'Områdets tekst størrelse';
 $lang['Unset Photo Sphere'] = 'Tilbakestill Bilde område';
 $lang['photosphere_config_intro'] = 'For å bruke Bilde Område på et bilde, kryss av "Bilde Område" på sin egenskapsside. Du kan også bruke batch manager, eller Quick Edit i programtillegget Administrasjonsverktøy.';
+$lang['Move down'] = 'Flytt ned';
+$lang['Move left'] = 'Flytt til venstre';
+$lang['Move right'] = 'Flytt til høyre';
+$lang['Move up'] = 'Flytt opp';
