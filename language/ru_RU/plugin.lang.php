@@ -35,3 +35,7 @@ $lang['Fullscreen'] = 'Полноэкранный режим';
 $lang['Zoom'] = 'Зум';
 $lang['Zoom in'] = 'Увеличение';
 $lang['Zoom out'] = 'Уменьшение';
+$lang['Move down'] = 'Вниз';
+$lang['Move left'] = 'Налево';
+$lang['Move right'] = 'Направо';
+$lang['Move up'] = 'Вверх';
