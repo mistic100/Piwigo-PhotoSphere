@@ -35,3 +35,7 @@ $lang['Zoom out'] = 'Oddialiť';
 $lang['Zoom in'] = 'Priblížiť';
 $lang['Fullscreen'] = 'Celá obrazovka';
 $lang['Automatic rotation'] = 'Automatické otáčanie';
+$lang['Move down'] = 'Posunúť nadol';
+$lang['Move left'] = 'Presun doľava';
+$lang['Move right'] = 'Pohyb doprava';
+$lang['Move up'] = 'Posunúť nahor';
