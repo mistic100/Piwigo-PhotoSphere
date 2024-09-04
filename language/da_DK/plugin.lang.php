@@ -35,3 +35,7 @@ $lang['Fullscreen'] = 'Fuldskærm';
 $lang['Zoom'] = 'Zoom';
 $lang['Zoom in'] = 'Zoom ind';
 $lang['Zoom out'] = 'Zoom ud';
+$lang['Move down'] = 'Flyt nedad';
+$lang['Move left'] = 'Flyt til venstre';
+$lang['Move right'] = 'Flyt til højre';
+$lang['Move up'] = 'Flyt opad';
