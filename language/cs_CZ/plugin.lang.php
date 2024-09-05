@@ -22,7 +22,7 @@
 // +-----------------------------------------------------------------------+
 $lang['Automatically launch animation'] = 'Automaticky spustit animaci';
 $lang['Between 1024px and 8192px.'] = 'Mezi 1024px a 8192px.';
-$lang['Bigger textures will take longer to load but smaller textures will result in blurry sphere.'] = 'Velké textury budou trvat delší dobu načíst, ale malé zase budou působit rozmazaně. ';
+$lang['Bigger textures will take longer to load but smaller textures will result in blurry sphere.'] = 'Velké textury se budou déle načítat, ale malé zase budou působit rozmazaně. ';
 $lang['Display Photo Sphere icon on thumbnails list'] = 'Zobraz ikonu Foto Sféry v náhledech';
 $lang['Display help message'] = 'Zobraz zprávu nápovědy';
 $lang['Drag and drop to navigate in the photo.'] = 'Drag and Drop pro navigaci v fotce.';
@@ -35,3 +35,7 @@ $lang['Fullscreen'] = 'Na celou obrazovku';
 $lang['Zoom'] = 'Zoom';
 $lang['Zoom in'] = 'Přiblížit';
 $lang['Zoom out'] = 'Oddálit';
+$lang['Move down'] = 'Přesunout doprava';
+$lang['Move left'] = 'Přesunout doleva';
+$lang['Move right'] = 'Přesunout nahoru';
+$lang['Move up'] = 'Přesunout dolů';
