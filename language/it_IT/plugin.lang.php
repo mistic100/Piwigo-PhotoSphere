@@ -35,3 +35,7 @@ $lang['Zoom out'] = 'Zoom out';
 $lang['Fullscreen'] = 'Schermo intero';
 $lang['Zoom'] = 'Zoom';
 $lang['Automatic rotation'] = 'Rotazione automatica';
+$lang['Move down'] = 'Verso il basso';
+$lang['Move left'] = 'Verso sinistra';
+$lang['Move right'] = 'Verso destra';
+$lang['Move up'] = 'Verso l\'alto';
