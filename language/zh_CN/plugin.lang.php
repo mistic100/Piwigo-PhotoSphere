@@ -35,3 +35,7 @@ $lang['Unset Photo Sphere'] = '重置 Photo Sphere';
 $lang['Zoom'] = '缩放';
 $lang['Zoom in'] = '放大';
 $lang['Zoom out'] = '缩小';
+$lang['Move down'] = '下移';
+$lang['Move left'] = '左移';
+$lang['Move right'] = '右移';
+$lang['Move up'] = '上移';
