@@ -35,3 +35,7 @@ $lang['Zoom in'] = 'Zoom in';
 $lang['Zoom out'] = 'Zoom out';
 $lang['Fullscreen'] = 'Πλήρης οθόνη';
 $lang['Automatic rotation'] = 'Αυτόματη περιστροφή';
+$lang['Move down'] = 'Μετακινήστε προς τα κάτω';
+$lang['Move left'] = 'Μετακινήστε προς τα αριστερά';
+$lang['Move right'] = 'Μετακινήστε προς τα δεξιά';
+$lang['Move up'] = 'Μετακινήστε προς τα πάνω';
