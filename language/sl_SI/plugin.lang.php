@@ -35,3 +35,7 @@ $lang['Fullscreen'] = 'Celozaslonsko';
 $lang['Zoom'] = 'Povečava';
 $lang['Zoom in'] = 'Povečaj';
 $lang['Zoom out'] = 'Pomanjšaj';
+$lang['Move down'] = 'Premakni navzdol';
+$lang['Move left'] = 'Premakni levo';
+$lang['Move right'] = 'Premakni desno';
+$lang['Move up'] = 'Premakni navzgor';
