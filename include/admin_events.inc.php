@@ -41,7 +41,7 @@ SELECT is_sphere
 
 function photosphere_photo_page_prefilter($content)
 {
-  $search = '<input type="hidden" name="pwg_token" value="{$PWG_TOKEN}">';
+  $search = '<strong>{\'Tags\'|@translate}</strong>';
   $add = '
     <label style="font-weight:bold"><input type="checkbox" name="is_sphere" {if $IS_SPHERE}checked{/if}> Photo Sphere</label>
   </p>
