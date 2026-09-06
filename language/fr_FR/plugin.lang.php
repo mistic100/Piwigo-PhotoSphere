@@ -9,7 +9,7 @@ $lang['Drag and drop to navigate in the photo.'] = 'Cliquez-glissez pour navigue
 $lang['Set Photo Sphere'] = 'Définir comme Photo Sphere';
 $lang['Unset Photo Sphere'] = 'Ne pas définir comme Photo Sphere';
 $lang['Sphere texture size'] = 'Taille de la texture';
-$lang['photosphere_config_intro'] = 'Pour utiliser Photo Sphere sur une photos, cochez "Photo Sphere" sur sa page de propriétés. Vous pouvez aussi utiliser le gestionnaire par lot ou l\'Édition rapide du plugin Admin Tools.';
+$lang['photosphere_config_intro'] = 'Pour utiliser Photo Sphere sur une photo, cochez "Photo Sphere" sur sa page de propriétés. Vous pouvez aussi utiliser le gestionnaire par lot ou l\'Édition rapide du plugin Admin Tools.';
 $lang['Zoom'] = 'Zoom';
 $lang['Zoom in'] = 'Zoomer';
 $lang['Zoom out'] = 'Dézoomer';
@@ -19,3 +19,5 @@ $lang['Move left'] = 'Vers la gauche';
 $lang['Move right'] = 'Vers la droite';
 $lang['Fullscreen'] = 'Plein écran';
 $lang['Automatic rotation'] = 'Rotation automatique';
+$lang['Additional configuration'] = 'Configuration additionnelle';
+$lang['photosphere_config_description'] = 'Configuration additionnelle au format JSON. Referrez vous à la <a href="https://photo-sphere-viewer.js.org/guide/config.html">documentation de la librairie</a> pour connaître les options disponibles.<br><b>ATTENTION:</b> une configuration incorrecte ou mal formée peut casser le viewer.';

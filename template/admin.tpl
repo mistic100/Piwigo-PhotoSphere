@@ -38,7 +38,14 @@
       <br>
       {'Between 1024px and 8192px.'|translate}
       {'Bigger textures will take longer to load but smaller textures will result in blurry sphere.'|translate}
-  </ul>
+    </li>
+    <li>
+      <label for="psv_config"><b>{'Additional configuration'|translate}</b></label>
+      <br>
+      <textarea rows="5" cols="50" name="psv_config" id="psv_config">{$PhotoSphere.psv_config}</textarea>
+      <br>
+      {'photosphere_config_description'|translate}
+    </li>
   </ul>
 </fieldset>
 

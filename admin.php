@@ -7,10 +7,15 @@ if (isset($_POST['save_config']))
 {
   $conf['PhotoSphere'] = array(
     'raw_width' => intval($_POST['raw_width']),
+    'psv_config' => trim(stripslashes($_POST['psv_config'])),
     'display_help' => isset($_POST['display_help']),
     'auto_anim' => isset($_POST['auto_anim']),
     'display_icon' => isset($_POST['display_icon']),
     );
+
+  if (empty($conf['PhotoSphere']['psv_config'])) {
+    $conf['PhotoSphere']['psv_config'] = '{}';
+  }
 
   conf_update_param('PhotoSphere', $conf['PhotoSphere']);
   $page['infos'][] = l10n('Information data registered in database');

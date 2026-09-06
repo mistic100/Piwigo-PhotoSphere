@@ -5,6 +5,7 @@ class PhotoSphere_maintain extends PluginMaintain
 {
   private $default_conf = array(
     'raw_width' => 8192,
+    'psv_config' => '{}',
     'display_help' => true,
     'auto_anim' => true,
     'display_icon' => true,
@@ -17,6 +18,12 @@ class PhotoSphere_maintain extends PluginMaintain
     if (empty($conf['PhotoSphere']))
     {
       conf_update_param('PhotoSphere', $this->default_conf, true);
+    } else {
+      $conf['PhotoSphere'] = safe_unserialize($conf['PhotoSphere']);
+      if (!array_key_exists('psv_config', $conf['PhotoSphere'])) {
+        $conf['PhotoSphere']['psv_config'] = $this->default_conf['psv_config'];
+        conf_update_param('PhotoSphere', $conf['PhotoSphere']);
+      }
     }
     
     $result = pwg_query('SHOW COLUMNS FROM `'.IMAGES_TABLE.'` LIKE "is_sphere";');

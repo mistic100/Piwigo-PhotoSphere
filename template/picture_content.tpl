@@ -28,7 +28,6 @@
         defaultYaw: {$SPHERE_LONG} * 2*Math.PI - Math.PI,
         defaultPitch: {$SPHERE_LAT} * Math.PI,
         navbar: 'autorotate zoom move caption fullscreen',
-        mousewheel: false,
         loadingImg: '{$ROOT_URL}{$PHOTOSPHERE_PATH}template/icon.png',
         caption: {if $PhotoSphere.display_help}'{'Drag and drop to navigate in the photo.'|translate|escape:javascript}'{else}null{/if},
         lang: {
@@ -48,6 +47,7 @@
                 autostartDelay: {if $PhotoSphere.auto_anim}2000{else}null{/if},
             }],
         ],
+        ...({$PhotoSphere.psv_config})
     });
 
     var $theImg = $('#theImage');

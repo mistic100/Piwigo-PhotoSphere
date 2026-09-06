@@ -19,3 +19,5 @@ $lang['Move left'] = 'Move left';
 $lang['Move right'] = 'Move right';
 $lang['Fullscreen'] = 'Fullscreen';
 $lang['Automatic rotation'] = 'Automatic rotation';
+$lang['Additional configuration'] = 'Additional configuration';
+$lang['photosphere_config_description'] = 'Additional configuration in JSON format. Please refer to the <a href="https://photo-sphere-viewer.js.org/guide/config.html">library documentation</a> for available options.<br><b>WARNING:</b> an incorrect or malformed configuration will break the viewer.';
