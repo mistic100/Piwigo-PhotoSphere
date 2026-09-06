@@ -20,7 +20,7 @@
 // | Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, |
 // | USA.                                                                  |
 // +-----------------------------------------------------------------------+
-$lang['photosphere_config_intro'] = 'Para usar o "Photo Sphere" numa foto, veja a página de propriedades de "Photo Sphere". Pode usar também a administração do lote (batch manager). Também pode usar a Edição Rápida do "plugin" Ferramentas de Administração.';
+$lang['photosphere_config_intro'] = 'Para ativar o "Photo Sphere" numa foto, veja a página de propriedades de "Photo Sphere". Pode usar também a administração do lote (batch manager). Também pode usar a Edição Rápida do "plugin" Ferramentas de Administração.';
 $lang['Unset Photo Sphere'] = 'Cancelar definição "Photo Sphere"';
 $lang['Sphere texture size'] = 'Dimensão da textura da esfera';
 $lang['Set Photo Sphere'] = 'Definir "Photo Sphere"';

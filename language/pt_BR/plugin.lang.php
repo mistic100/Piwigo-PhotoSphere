@@ -20,7 +20,7 @@
 // | Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, |
 // | USA.                                                                  |
 // +-----------------------------------------------------------------------+
-$lang['photosphere_config_intro'] = 'Para usar o Foto Esfera em uma foto, marque "Foto Esfera" na sua página de propriedades. Você também pode usar o gerenciador de lote. E você também pode usar o plugin Edição Rápida de Ferramentas de Administração.';
+$lang['photosphere_config_intro'] = 'Para ativar o Foto Esfera em uma foto, marque "Foto Esfera" na sua página de propriedades. Você também pode usar o gerenciador de lote. E você também pode usar o plugin Edição Rápida de Ferramentas de Administração.';
 $lang['Unset Photo Sphere'] = 'Desabilitar Foto Esfera';
 $lang['Sphere texture size'] = 'Tamanho da tesxtura Esfera';
 $lang['Set Photo Sphere'] = 'Definir Foto Esfera';
