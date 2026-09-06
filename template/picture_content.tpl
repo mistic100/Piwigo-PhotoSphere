@@ -5,15 +5,15 @@
 <div id="loupe_image" style="display:none"></div>
 
 {html_head}
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@photo-sphere-viewer/core@5.9.0/index.min.css" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@photo-sphere-viewer/core@5.15.1/index.min.css" />
 {/html_head}
 
 <script type="importmap">
     {
         "imports": {
-            "three": "https://cdn.jsdelivr.net/npm/three@0.167.1/build/three.module.min.js",
-            "@photo-sphere-viewer/core": "https://cdn.jsdelivr.net/npm/@photo-sphere-viewer/core@5.9.0/index.module.min.js",
-            "@photo-sphere-viewer/autorotate-plugin": "https://cdn.jsdelivr.net/npm/@photo-sphere-viewer/autorotate-plugin@5.9.0/index.module.min.js"
+            "three": "https://cdn.jsdelivr.net/npm/three@0.185.1/build/three.module.min.js",
+            "@photo-sphere-viewer/core": "https://cdn.jsdelivr.net/npm/@photo-sphere-viewer/core@5.15.1/index.module.min.js",
+            "@photo-sphere-viewer/autorotate-plugin": "https://cdn.jsdelivr.net/npm/@photo-sphere-viewer/autorotate-plugin@5.15.1/index.module.min.js"
         }
     }
 </script>
@@ -64,7 +64,7 @@
         height: Math.min(width * 0.7, maxHeight)
       });
 
-      viewer?.autoSize();
+      viewer.autoSize();
     }
 
     $(window).on('resize', resize);
@@ -73,7 +73,7 @@
       setTimeout(resize, 10);
     });
 
-    resize();
+    viewer.addEventListener('ready', resize, { once: true });
 </script>
 
 {html_style}
