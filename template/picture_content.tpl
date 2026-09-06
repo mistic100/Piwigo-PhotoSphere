@@ -64,7 +64,7 @@
         height: Math.min(width * 0.7, maxHeight)
       });
 
-      viewer.autoSize();
+      viewer?.autoSize();
     }
 
     $(window).on('resize', resize);
@@ -73,7 +73,7 @@
       setTimeout(resize, 10);
     });
 
-    viewer.addEventListener('ready', resize, { once: true });
+    resize();
 </script>
 
 {html_style}
