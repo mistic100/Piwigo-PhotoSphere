@@ -83,7 +83,7 @@ function photosphere_admintools()
   
   if (defined('ADMINTOOLS_PATH'))
   {
-    if (script_basename() == 'picture')
+    if (script_basename() == 'picture' and isset($picture['current']))
     {
       $template->assign('ato_QUICK_EDIT_is_sphere', $picture['current']['is_sphere']);
     }
