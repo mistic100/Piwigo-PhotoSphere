@@ -39,3 +39,5 @@ $lang['Move down'] = 'Posunúť nadol';
 $lang['Move left'] = 'Presun doľava';
 $lang['Move right'] = 'Pohyb doprava';
 $lang['Move up'] = 'Posunúť nahor';
+$lang['Additional configuration'] = 'Ďalšie nastavenia';
+$lang['photosphere_config_description'] = 'Dodatočná konfigurácia vo formáte JSON. Informácie o dostupných možnostiach nájdete v <a href="https://photo-sphere-viewer.js.org/guide/config.html">dokumentácii knižnice</a>.<br><b>UPOZORNENIE:</b> nesprávna alebo chybne formátovaná konfigurácia spôsobí nefunkčnosť prehliadača.';
