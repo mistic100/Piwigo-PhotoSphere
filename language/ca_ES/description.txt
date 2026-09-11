@@ -1,1 +1,1 @@
-Afegeix una visor de fotos esfèric. "Photo Spheres viewer"
+Afegeix un visor de fotos esfèriques. "Photo Spheres viewer"

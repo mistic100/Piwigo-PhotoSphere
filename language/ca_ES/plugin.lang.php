@@ -39,3 +39,5 @@ $lang['Move left'] = 'Mou a l\'esquerra';
 $lang['Move right'] = 'Mou a la dreta';
 $lang['Move up'] = 'Mou amunt';
 $lang['Move down'] = 'Mou avall';
+$lang['Additional configuration'] = 'Configuració addicional';
+$lang['photosphere_config_description'] = 'Configuració addicional en format JSON. Consulteu la <a href="https://photo-sphere-viewer.js.org/guide/config.html">documentació de la biblioteca</a> per veure les opcions disponibles.<br/><b>ATENCIÓ:</b> Una configuració incorrecta o mal formada espatllarà el visor.';
