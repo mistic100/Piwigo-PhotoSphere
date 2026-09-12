@@ -39,3 +39,5 @@ $lang['Move down'] = 'Premakni navzdol';
 $lang['Move left'] = 'Premakni levo';
 $lang['Move right'] = 'Premakni desno';
 $lang['Move up'] = 'Premakni navzgor';
+$lang['Additional configuration'] = 'Dodatna konfiguracija';
+$lang['photosphere_config_description'] = 'Dodatna konfiguracija v formatu JSON. Za razpoložljive možnosti si oglejte <a href="https://photo-sphere-viewer.js.org/guide/config.html">dokumentacijo knjižnice</a>.<br><b>OPOZORILO:</b> nepravilna ali napačno oblikovana konfiguracija bo povzročila okvaro pregledovalnika.';
