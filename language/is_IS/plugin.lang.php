@@ -24,3 +24,5 @@ $lang['Move down'] = 'Færa niður';
 $lang['Move left'] = 'Færa til vinstri';
 $lang['Move right'] = 'Færa til hægri';
 $lang['Move up'] = 'Færa upp';
+$lang['Additional configuration'] = 'Viðbótarstillingar';
+$lang['photosphere_config_description'] = 'Viðbótarstillingar á JSON-sniði. Vinsamlegast skoðið <a href="https://photo-sphere-viewer.js.org/guide/config.html">skjalasafnið</a> fyrir tiltæka valkosti.<br><b>AÐVÖRUN:</b> röng eða slæm stilling mun valda því að skoðarinn hættir að virka.';
