@@ -39,3 +39,5 @@ $lang['Move down'] = 'Przesuń w dół';
 $lang['Move left'] = 'Przesuń w lewo';
 $lang['Move right'] = 'Przesuń w prawo';
 $lang['Move up'] = 'Przesuń w górę';
+$lang['Additional configuration'] = 'Dodatkowa konfiguracja';
+$lang['photosphere_config_description'] = 'Dodatkowa konfiguracja w formacie JSON. Proszę zapoznać się z <a href="https://photo-sphere-viewer.js.org/guide/config.html">dokumentacją biblioteki</a> dla dostępnych opcji.<br><b>OSTRZEŻENIE:</b> nieprawidłowa lub źle uformowana konfiguracja zepsuje przeglądanie.';
