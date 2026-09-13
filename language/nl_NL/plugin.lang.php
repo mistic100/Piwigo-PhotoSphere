@@ -39,3 +39,5 @@ $lang['Move down'] = 'Ga naar beneden';
 $lang['Move left'] = 'Ga naar links';
 $lang['Move right'] = 'Ga naar rechts';
 $lang['Move up'] = 'Ga naar boven';
+$lang['Additional configuration'] = 'Aanvullende configuratie';
+$lang['photosphere_config_description'] = 'Aanvullende configuratie in JSON-formaat. Raadpleeg de <a href="https://photo-sphere-viewer.js.org/guide/config.html">bibliotheekdocumentatie</a> voor de beschikbare opties.<br><b>WAARSCHUWING:</b> een onjuiste of ongeldig opgemaakte configuratie kan ervoor zorgen dat de viewer niet meer werkt.';
