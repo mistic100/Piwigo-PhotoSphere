@@ -24,3 +24,5 @@ $lang['Zoom'] = '縮放';
 $lang['Zoom in'] = '放大';
 $lang['Zoom out'] = '縮小';
 $lang['photosphere_config_intro'] = '若您想將某張照片加入 Photo Sphere 中，請先在照片的屬性頁面中勾選 "Photo Sphere"。您也可以設用批次管理員，或是 Admin Tools 插件中的 Quick Edit。';
+$lang['Additional configuration'] = '額外的組態設定';
+$lang['photosphere_config_description'] = '額外的組態設定以 JSON 格式管理。想查閱有哪些選項可用，請參考<a href="https://photo-sphere-viewer.js.org/guide/config.html">程式庫的文件</a>。<br><b>警告：</b>若是組態設定的內容或格式不正確，可能造成整個檢視器損毀。';
