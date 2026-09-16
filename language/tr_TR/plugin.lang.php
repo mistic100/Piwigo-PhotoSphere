@@ -39,3 +39,5 @@ $lang['Move down'] = 'Aşağıya taşı';
 $lang['Move left'] = 'Sola taşı';
 $lang['Move right'] = 'Sağa taşı';
 $lang['Move up'] = 'Yukarıya taşı';
+$lang['Additional configuration'] = 'Ek ayarlar';
+$lang['photosphere_config_description'] = 'JSON formatında ek ayarları. Mevcut seçenekler için lütfen <a href="https://photo-sphere-viewer.js.org/guide/config.html">kütüphane dokümantasyonuna</a> bakın.<br><b>UYARI:</b> yanlış veya hatalı bir ayarı görüntüleyiciyi çalışmaz hale getirecektir.';
