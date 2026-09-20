@@ -24,3 +24,5 @@ $lang['Zoom'] = 'התקרב';
 $lang['Zoom in'] = 'התקרב יותר';
 $lang['Zoom out'] = 'התרחק';
 $lang['photosphere_config_intro'] = 'כדי להשתמש ב-Photo Sphere בתמונה, סמן "Photo Sphere" בדף המאפיינים שלה. ניתן גם להשתמש במנהל הצפייה המהירה של תוסף כלים המנהל.';
+$lang['Additional configuration'] = 'תצורה נוספת';
+$lang['photosphere_config_description'] = 'תצורה נוספת בפורמט JSON. נא לעיין ב<a href="https://photo-sphere-viewer.js.org/guide/config.html">תיעוד הספרייה</a>לאפשרויות הזמינות.<br><b>אזהרה:</b> תצורה שגויה או פגומה תשבור את הצופה.';
