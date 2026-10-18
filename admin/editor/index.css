@@ -1,0 +1,146 @@
+@import url('./dialog-help.css');
+@import url('./dialog-search.css');
+@import url('./panel-tour.css');
+@import url('./panel-settings.css');
+@import url('./dialog-network.css');
+
+#tabsheet {
+    margin-bottom: 0;
+}
+
+photo-sphere-editor {
+    --text-color: rgba(255, 255, 255, 0.8);
+    --bg-color: rgba(0, 0, 0, 0.5);
+    --highlight-color: rgba(255, 255, 255, 0.1);
+    --piwigo-color: #ffa646;
+    --spacing: 10px;
+    --spacing-s: calc(var(--spacing) / 2);
+    --border-radius: 12px;
+    --border-radius-s: calc(var(--border-radius) / 2);
+
+    display: block;
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    text-align: left;
+
+    &,
+    h2,
+    h3,
+    h4,
+    label,
+    legend,
+    span,
+    p {
+        color: var(--text-color);
+    }
+
+    a {
+        color: var(--piwigo-color);
+    }
+
+    .jconfirm {
+        span {
+            color: initial;
+        }
+    }
+
+    .buttonLike {
+        border-radius: var(--border-radius-s);
+    }
+
+    .psv-notification-content {
+        color: #6ece5e;
+        outline: 2px solid currentColor;
+    }
+}
+
+#photo-sphere-editor-viewer {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+photo-sphere-editor-panel,
+.photo-sphere-editor-dialog {
+    background: var(--bg-color);
+    backdrop-filter: blur(5px);
+    border-radius: var(--border-radius);
+    padding: var(--spacing);
+    border: 1px solid var(--text-color);
+    overflow: hidden;
+}
+
+.photo-sphere-editor-dialog {
+    width: clamp(400px, 75vw, 1200px);
+    box-shadow: 0 10px 20px var(--bg-color);
+
+    &::backdrop {
+        background: var(--bg-color);
+    }
+
+    header {
+        margin: calc(-1 * var(--spacing));
+        margin-bottom: var(--spacing);
+        padding: var(--spacing);
+        background: var(--bg-color);
+        display: flex;
+        align-items: center;
+
+        h3 {
+            flex: 1;
+            margin: 0;
+        }
+
+        button {
+            padding: 5px;
+            aspect-ratio: 1;
+        }
+    }
+
+    label {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: var(--spacing);
+    }
+
+    &[is="photo-sphere-editor-dialog-network"] {
+        min-width: 75vw;
+    }
+}
+
+photo-sphere-editor-panel {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: var(--spacing);
+    right: var(--spacing);
+    bottom: var(--spacing);
+    width: clamp(300px, 25%, 500px);
+    z-index: 99;
+}
+
+.photo-sphere-editor-tabs {
+    list-style: none;
+    margin: calc(-1 * var(--spacing));
+    margin-bottom: var(--spacing);
+    padding: 0;
+    display: flex;
+    background: var(--bg-color);
+
+    li {
+        flex: 1;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 0.75em;
+        font-size: 14px;
+        white-space: nowrap;
+        cursor: pointer;
+
+        &[selected] {
+            border-bottom: 2px solid currentColor;
+            font-weight: 600;
+        }
+    }
+}

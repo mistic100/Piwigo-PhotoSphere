@@ -1,0 +1,32 @@
+photo-sphere-marker {
+    --arrow-color: 255, 255, 255;
+    --shadow-color: 10, 10, 10;
+
+    border-radius: 50%;
+    color: rgba(var(--arrow-color), 0.8);
+    filter: drop-shadow(0 8px 2px rgba(var(--shadow-color), 0.7));
+    transition: all 300ms ease-out;
+
+    &, img, svg {
+        display: block;
+        width: 100%;
+        height: 100%;
+    }
+
+    img {
+        border-radius: 50%;
+        outline: 4px solid rgba(var(--arrow-color), 0.8);
+    }
+
+    &:hover {
+        filter: drop-shadow(0 12px 5px rgba(var(--shadow-color), 0.7));
+    }
+
+    &.photo-sphere-marker--thumbnail:hover {
+        transform: scale(1.1);
+    }
+
+    &.photo-sphere-marker--arrow:hover {
+        transform: rotate3d(1, 0, 0, 30deg) scale(1.1);
+    }
+}

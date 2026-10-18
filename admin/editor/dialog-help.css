@@ -1,0 +1,10 @@
+dialog[is="photo-sphere-editor-dialog-help"] {
+    #help-content {
+        font-size: 14px;
+
+        h2 {
+            display: block;
+            text-align: unset;
+        }
+    }
+}

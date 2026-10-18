@@ -1,0 +1,72 @@
+photo-sphere-editor-panel-tour {
+    display: flex;
+    flex-direction: column;
+    min-height: 0;
+    flex: 1;
+
+    #links-list {
+        flex: 1;
+        overflow-y: auto;
+        margin-top: var(--spacing);
+        scrollbar-width: thin;
+    }
+}
+
+photo-sphere-editor-tour-item {
+    display: flex;
+    position: relative;
+    gap: var(--spacing);
+    background: var(--highlight-color);
+    border-radius: var(--border-radius-s);
+    overflow: hidden;
+    padding: var(--spacing-s);
+
+    &:not(:last-child) {
+        margin-bottom: var(--spacing);
+    }
+
+    img {
+        width: 80px;
+        aspect-ratio: 1;
+        border-radius: var(--border-radius-s);
+    }
+
+    .tour-item__return {
+        position: absolute;
+        right: 0;
+        top: 0;
+        padding: var(--spacing-s);
+        cursor: help;
+    }
+
+    .tour-item__content {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        gap: var(--spacing-s);
+    }
+
+    .tour-item__buttons {
+        flex: none;
+        display: flex;
+        gap: var(--spacing-s);
+        background: var(--highlight-color);
+        border-radius: var(--border-radius-s);
+
+        button {
+            border: none;
+            background: none;
+            font-size: 18px;
+            color: var(--text-color);
+            width: 38px;
+            padding: 0;
+            aspect-ratio: 1;
+            cursor: pointer;
+
+            &:hover {
+                color: var(--piwigo-color);
+            }
+        }
+    }
+}

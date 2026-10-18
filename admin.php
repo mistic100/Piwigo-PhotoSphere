@@ -1,31 +1,14 @@
 <?php
 defined('PHOTOSPHERE_PATH') or die('Hacking attempt!');
 
-global $template, $page, $conf;
+load_language('plugin.lang', PHOTOSPHERE_PATH);
 
-if (isset($_POST['save_config']))
-{
-  $conf['PhotoSphere'] = array(
-    'raw_width' => intval($_POST['raw_width']),
-    'psv_config' => trim(stripslashes($_POST['psv_config'])),
-    'display_help' => isset($_POST['display_help']),
-    'auto_anim' => isset($_POST['auto_anim']),
-    'display_icon' => isset($_POST['display_icon']),
-    );
+load_language('admin.lang', PHOTOSPHERE_PATH, array(
+  'force_fallback' => 'en_UK'
+));
 
-  if (empty($conf['PhotoSphere']['psv_config'])) {
-    $conf['PhotoSphere']['psv_config'] = '{}';
-  }
-
-  conf_update_param('PhotoSphere', $conf['PhotoSphere']);
-  $page['infos'][] = l10n('Information data registered in database');
+if (isset($_GET['tab']) &&  $_GET['tab'] ==  'photo') {
+  include(PHOTOSPHERE_PATH . 'admin/photo.php');
+} else {
+  include(PHOTOSPHERE_PATH . 'admin/config.php');
 }
-
-$template->assign(array(
-  'PHOTOSPHERE_PATH' => PHOTOSPHERE_PATH,
-  'PhotoSphere' => $conf['PhotoSphere'],
-  ));
-
-$template->set_filename('photosphere_config', realpath(PHOTOSPHERE_PATH . 'template/admin.tpl'));
-
-$template->assign_var_from_handle('ADMIN_CONTENT', 'photosphere_config');

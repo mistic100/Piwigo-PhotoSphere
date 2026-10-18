@@ -1,0 +1,32 @@
+dialog[is="photo-sphere-editor-dialog-search"] {
+    #dialog-search-list {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: var(--spacing);
+        margin-bottom: var(--spacing);
+    }
+
+    .dialog-search-list__item {
+        display: flex;
+        flex-direction: column;
+        gap: var(--spacing-s);
+        border-radius: var(--border-radius-s);
+        border: none;
+        background: var(--highlight-color);
+        padding: var(--spacing-s);
+        overflow: hidden;
+        cursor: pointer;
+        transition: all 200ms;
+
+        img {
+            width: 100px;
+            border-radius: var(--border-radius-s);
+        }
+
+        &:hover {
+            outline: 2px solid var(--piwigo-color);
+            scale: 1.1;
+        }
+    }
+}

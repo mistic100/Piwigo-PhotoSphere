@@ -1,0 +1,40 @@
+<?php
+
+$lang['photosphere_config_intro'] = 'Pour activer Photo Sphere sur une photo, cochez "Photo Sphere" sur sa page de propriétés. Vous pouvez aussi utiliser le gestionnaire par lot ou l\'Édition rapide du plugin Admin Tools.';
+$lang['Display help message'] = 'Afficher le message d\'aide';
+$lang['Automatically launch animation'] = 'Démarrer automatiquement l\'animation';
+$lang['Display Photo Sphere icon on thumbnails list'] = 'Afficher le logo Photo Sphere sur les miniatures';
+$lang['Sphere texture size'] = 'Taille de la texture';
+$lang['photosphere_texturesize_description'] = 'Entre 1024px et 8192px. Des textures plus grosses prendrons plus de temps à charger mais des textures trop petites donneront une sphère floue.';
+$lang['Additional configuration'] = 'Configuration additionnelle';
+$lang['photosphere_config_description'] = 'Configuration additionnelle au format JSON. Referrez vous à la <a href="https://photo-sphere-viewer.js.org/guide/config.html">documentation de la librairie</a> pour connaître les options disponibles.<br><b>ATTENTION:</b> une configuration incorrecte ou mal formée peut casser le viewer.';
+$lang['Virtual tour'] = 'Visite virtuelle';
+$lang['photosphere_tour_description'] = 'Cette configuration s\'applique lorsque vous définissez des liens entre les Photo Spheres.';
+$lang['Link display mode'] = 'Mode d\'affichage des liens';
+$lang['Arrow'] = 'Flèche';
+$lang['Link size'] = 'Taille des liens';
+$lang['Set Photo Sphere'] = 'Définir comme Photo Sphere';
+$lang['Unset Photo Sphere'] = 'Ne pas définir comme Photo Sphere';
+$lang['photosphere_enabled_error'] = 'Cette photo n\'est pas une Photo Sphere, veuillez l\'activer dans l\'onglet des propriétés.';
+
+$lang['photosphere_tour']['Add a new link'] = 'Ajouter un nouveau lien';
+$lang['photosphere_tour']['Network'] = 'Réseau';
+$lang['photosphere_tour']['Goto'] = 'Y aller';
+$lang['photosphere_tour']['Change position'] = 'Changer la position';
+$lang['photosphere_tour']['Has return link'] = 'A un lien retour';
+$lang['photosphere_tour']['Delete link to "{0}" ?'] = 'Supprimer le lien vers "{0}" ?';
+$lang['photosphere_tour']['Yes, and the return link'] = 'Oui, et le lien retour';
+$lang['photosphere_tour']['Select a Photo Sphere'] = 'Choisir une Photo Sphere';
+$lang['photosphere_tour']['No Photo Sphere found'] = 'Aucune Photo Sphere trouvée';
+$lang['photosphere_tour']['place_link_hint'] = 'Cliquez sur le panorama à l\'endroit où vous voulez placer le lien.';
+$lang['photosphere_tour']['Create return link from "{0}" ?'] = 'Créer un lien retour depuis "{0}" ?';
+$lang['photosphere_tour']['Field of view'] = 'Champ de vision';
+$lang['photosphere_tour']['Defaut zoom level'] = 'Niveau de zoom par défaut';
+$lang['photosphere_tour']['Fisheye'] = 'Fisheye';
+$lang['photosphere_tour']['Orientation correction'] = 'Correction de l\'orientation';
+$lang['photosphere_tour']['orientation_help'] = 'Utilisez ces paramètres pour ajuster l\'orientation de du panorama. Toutes les images liées devraient avoir la même orientation.';
+$lang['photosphere_tour']['coi_help'] = 'Pour changer la position par défaut du panorama, utilisez l\'onglet "Centre d\'interêt".';
+$lang['photosphere_tour']['Pan'] = 'Panoramique';
+$lang['photosphere_tour']['Tilt'] = 'Inclinaison';
+$lang['photosphere_tour']['Roll'] = 'Roulis';
+$lang['photosphere_tour']['Reset'] = 'Réinitialiser';

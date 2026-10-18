@@ -39,6 +39,19 @@ SELECT is_sphere
   $template->set_prefilter('picture_modify', 'photosphere_photo_page_prefilter');
 }
 
+function photosphere_photo_add_tab($sheets, $id)
+{
+	if ($id == 'photo')
+	{
+		$sheets['photosphere'] = array(
+			'caption' => 'Photo Sphere',
+			'url' => get_root_url() . 'admin.php?page=plugin-PhotoSphere-photo&amp;image_id='.$_GET['image_id'],
+			);
+	}
+
+	return $sheets;
+}
+
 function photosphere_photo_page_prefilter($content)
 {
   $search = '<strong>{\'Tags\'|@translate}</strong>';
@@ -74,6 +87,10 @@ function photosphere_apply_prefilter($filter_sets, $prefilter)
 function photosphere_loc_end_element_set_global()
 {
   global $template;
+
+  load_language('admin.lang', PHOTOSPHERE_PATH, array(
+    'force_fallback' => 'en_UK'
+  ));
 
   $template->append('element_set_global_plugins_actions', array(
     'ID' => 'set_photosphere',
