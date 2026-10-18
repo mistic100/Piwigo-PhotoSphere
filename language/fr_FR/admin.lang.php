@@ -1,0 +1,21 @@
+<?php
+
+$lang['Automatically launch animation'] = 'Démarrer automatiquement l\'animation';
+$lang['Between 1024px and 8192px.'] = 'Entre 1024px et 8192px.';
+$lang['Bigger textures will take longer to load but smaller textures will result in blurry sphere.'] = 'Des textures plus grosses prendrons plus de temps à charger mais des textures trop petites donneront en sphère floue.';
+$lang['Display help message'] = 'Afficher le message d\'aide';
+$lang['Display Photo Sphere icon on thumbnails list'] = 'Afficher le logo Photo Sphere sur les miniatures';
+$lang['Set Photo Sphere'] = 'Définir comme Photo Sphere';
+$lang['Unset Photo Sphere'] = 'Ne pas définir comme Photo Sphere';
+$lang['Sphere texture size'] = 'Taille de la texture';
+$lang['photosphere_config_intro'] = 'Pour activer Photo Sphere sur une photo, cochez "Photo Sphere" sur sa page de propriétés. Vous pouvez aussi utiliser le gestionnaire par lot ou l\'Édition rapide du plugin Admin Tools.';
+$lang['Automatic rotation'] = 'Rotation automatique';
+$lang['Additional configuration'] = 'Configuration additionnelle';
+$lang['photosphere_config_description'] = 'Configuration additionnelle au format JSON. Referrez vous à la <a href="https://photo-sphere-viewer.js.org/guide/config.html">documentation de la librairie</a> pour connaître les options disponibles.<br><b>ATTENTION:</b> une configuration incorrecte ou mal formée peut casser le viewer.';
+$lang['photosphere_tour_description'] = 'Cette configuration s\'applique lorsque vous définissez des liens entre les Photo Spheres.';
+$lang['Virtual tour'] = 'Visite virtuelle';
+$lang['Default link display mode'] = 'Mode d\'affichage par défaut des liens';
+$lang['Default link size'] = 'Taille par défaut des liens';
+
+$lang['photosphere_tour']['Goto'] = 'Y aller';
+$lang['photosphere_tour']['Delete link to "{0}" ?'] = 'Supprimer le lien vers "{0}" ?';

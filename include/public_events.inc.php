@@ -7,6 +7,8 @@ function photosphere_element_content($content, $element)
   
   if ($element['is_sphere'])
   {
+    load_language('plugin.lang', PHOTOSPHERE_PATH);
+
     $template->set_filename('sphere_content', realpath(PHOTOSPHERE_PATH . 'template/picture_content.tpl'));
     
     if ($element['coi'])
@@ -28,8 +30,10 @@ function photosphere_element_content($content, $element)
     
     $template->assign(array(
       'PhotoSphere' => $conf['PhotoSphere'],
-      'SPHERE_DERIVATIVE' => new DerivativeImage($derivative_params, $element['src_image']),
+      'SPHERE_DERIVATIVE' => DerivativeImage::url($derivative_params, $element['src_image']),
       'PHOTOSPHERE_PATH' => PHOTOSPHERE_PATH,
+      'PHOTOSPHERE_VERSION' => PHOTOSPHERE_VERSION,
+      'PHOTOSPHERE_THREE_VERSION' => PHOTOSPHERE_THREE_VERSION,
       ));
 
     return $template->parse('sphere_content', true);
@@ -80,7 +84,7 @@ function photosphere_index_thumbnails_prefilter($content)
     $search = '#(<li>)#';
 
     // hack for modus custom Smarty plugin
-    // the icon is added in Javascript because there is no way to alterthe output of the plugin
+    // the icon is added in Javascript because there is no way to alter the output of the plugin
     if ($user['theme'] == 'modus') {
       $content = str_replace(
         '{modus_thumbs}',

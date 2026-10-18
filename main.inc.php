@@ -5,7 +5,7 @@ Version: auto
 Description: Add a Photo Spheres viewer.
 Plugin URI: auto
 Author: Mistic
-Author URI: http://www.strangeplanet.fr
+Author URI: https://strangeplanet.fr
 Has Settings: true
 */
 
@@ -28,24 +28,15 @@ global $prefixeTable;
 
 define('PHOTOSPHERE_PATH' , PHPWG_PLUGINS_PATH . 'PhotoSphere/');
 define('PHOTOSPHERE_ADMIN', get_root_url() . 'admin.php?page=plugin-PhotoSphere');
+define('PHOTOSPHERE_LINKS_TABLE', $prefixeTable . 'photosphere_links');
+define('PHOTOSPHERE_VERSION', '5.15.1');
+define('PHOTOSPHERE_THREE_VERSION', '0.185.1');
 
 
 add_event_handler('init', 'photosphere_init');
 function photosphere_init()
 {
   global $conf;
-
-  if (defined('IN_ADMIN'))
-  {
-    load_language('plugin.lang', PHOTOSPHERE_PATH, array(
-      'force_fallback' => 'en_UK'
-    ));
-  }
-  else
-  {
-    load_language('plugin.lang', PHOTOSPHERE_PATH);
-  }
-
   $conf['PhotoSphere'] = safe_unserialize($conf['PhotoSphere']);
 }
 
@@ -70,6 +61,16 @@ if (defined('IN_ADMIN'))
     
   add_event_handler('element_set_global_action', 'photosphere_element_set_global_action',
     EVENT_HANDLER_PRIORITY_NEUTRAL, $admin_file);
+
+  add_event_handler('tabsheet_before_select', 'photosphere_photo_add_tab',
+    EVENT_HANDLER_PRIORITY_NEUTRAL, $admin_file);
+}
+else if (defined('IN_WS'))
+{
+  $ws_file = PHOTOSPHERE_PATH . 'include/ws_events.inc.php';
+
+  add_event_handler('ws_add_methods', 'photosphere_ws_add_methods', 
+    EVENT_HANDLER_PRIORITY_NEUTRAL+1, $ws_file);
 }
 else
 {

@@ -1,0 +1,231 @@
+#tabsheet {
+    margin-bottom: 0;
+}
+
+photo-sphere-editor {
+    --text-color: rgba(255, 255, 255, 0.8);
+    --bg-color: rgba(0, 0, 0, 0.5);
+    --highlight-color: rgba(255, 255, 255, 0.1);
+    --piwigo-color: #ffa646;
+
+    display: block;
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    text-align: left;
+
+    &,
+    h1,
+    h2,
+    h3,
+    h4,
+    label,
+    legend,
+    span {
+        color: var(--text-color);
+    }
+
+    .psv-notification-content {
+        color: #6ece5e;
+        outline: 2px solid currentColor;
+    }
+}
+
+#photo-sphere-editor-viewer {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+photo-sphere-editor-panel,
+dialog[is=photo-sphere-editor-search-dialog],
+dialog[is=photo-sphere-editor-edit-dialog] {
+    background: var(--bg-color);
+    backdrop-filter: blur(5px);
+    border-radius: 12px;
+    padding: 6px;
+    border: 1px solid var(--text-color);
+    overflow: hidden;
+
+    h3 {
+        margin: 0 0 10px 0 !important;
+        padding: 0 0 5px 0 !important;
+        border-bottom: 1px solid currentColor !important;
+    }
+}
+
+dialog[is=photo-sphere-editor-search-dialog],
+dialog[is=photo-sphere-editor-edit-dialog] {
+    min-width: 400px;
+    max-width: 75vw;
+    box-shadow: 0 10px 20px var(--bg-color);
+
+    &::backdrop {
+        background: var(--bg-color);
+    }
+
+    label {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 1em;
+    }
+}
+
+#search-dialog-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 10px;
+
+    .search-dialog-list__item {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+        border-radius: 6px;
+        border: none;
+        background: var(--highlight-color);
+        padding: 5px;
+        overflow: hidden;
+        cursor: pointer;
+        transition: all 200ms;
+
+        img {
+            width: 100px;
+            border-radius: 5px;
+        }
+
+        &:hover {
+            outline: 2px solid var(--piwigo-color);
+            scale: 1.1;
+        }
+    }
+}
+
+photo-sphere-editor-panel {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    bottom: 10px;
+    width: 350px;
+    z-index: 99;
+}
+
+photo-sphere-editor-panel-tour {
+    display: flex;
+    flex-direction: column;
+    min-height: 0;
+    flex: 1;
+
+    #links-list {
+        flex: 1;
+        overflow-y: auto;
+        margin-top: 10px;
+        scrollbar-width: thin;
+    }
+}
+
+photo-sphere-editor-tour-item {
+    display: flex;
+    position: relative;
+    gap: 10px;
+    background: var(--highlight-color);
+    border-radius: 6px;
+    overflow: hidden;
+    padding: 5px;
+
+    &:not(:last-child) {
+        margin-bottom: 10px;
+    }
+
+    img {
+        width: 80px;
+        aspect-ratio: 1;
+        border-radius: 5px;
+    }
+
+    .photo-sphere-editor-tour-item__return {
+        position: absolute;
+        right: 0;
+        top: 0;
+        padding: 5px;
+        cursor: help;
+    }
+
+    .photo-sphere-editor-tour-item__content {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        gap: 5px;
+    }
+
+    .photo-sphere-editor-tour-item__buttons {
+        flex: none;
+        display: flex;
+        gap: 5px;
+        background: var(--highlight-color);
+        border-radius: 5px;
+
+        button {
+            border: none;
+            background: none;
+            font-size: 18px;
+            color: white;
+            width: 39px;
+            aspect-ratio: 1;
+            cursor: pointer;
+
+            &:hover {
+                color: #ffa646;
+            }
+        }
+    }
+}
+
+.photo-sphere-editor-tabs {
+    list-style: none;
+    margin: -6px -6px 10px -6px;
+    padding: 0;
+    display: flex;
+    background: var(--bg-color);
+
+    li {
+        flex: 1;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 0.75em;
+        font-size: 14px;
+        cursor: pointer;
+
+        &[selected] {
+            border-bottom: 2px solid currentColor;
+            font-weight: 600;
+        }
+    }
+}
+
+photo-sphere-editor-panel-settings {
+    form {
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+
+    fieldset {
+        margin: 0 0 10px 0;
+        border: none;
+        border-radius: 8px;
+        background: var(--highlight-color);
+    }
+
+    .slider-bar-wrapper {
+        margin: 10px 10px 20px 10px;
+    }
+
+    [data-slider-value] {
+        color: var(--piwigo-color);
+    }
+}

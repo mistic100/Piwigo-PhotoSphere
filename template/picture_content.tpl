@@ -5,26 +5,27 @@
 <div id="loupe_image" style="display:none"></div>
 
 {html_head}
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@photo-sphere-viewer/core@5.15.1/index.min.css" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@photo-sphere-viewer/core@{$PHOTOSPHERE_VERSION}/index.min.css" />
 {/html_head}
 
 <script type="importmap">
     {
         "imports": {
-            "three": "https://cdn.jsdelivr.net/npm/three@0.185.1/build/three.module.min.js",
-            "@photo-sphere-viewer/core": "https://cdn.jsdelivr.net/npm/@photo-sphere-viewer/core@5.15.1/index.module.min.js",
-            "@photo-sphere-viewer/autorotate-plugin": "https://cdn.jsdelivr.net/npm/@photo-sphere-viewer/autorotate-plugin@5.15.1/index.module.min.js"
+            "three": "https://cdn.jsdelivr.net/npm/three@{$PHOTOSPHERE_THREE_VERSION}/build/three.module.min.js",
+            "@photo-sphere-viewer/core": "https://cdn.jsdelivr.net/npm/@photo-sphere-viewer/core@{$PHOTOSPHERE_VERSION}/index.module.min.js",
+            "@photo-sphere-viewer/autorotate-plugin": "https://cdn.jsdelivr.net/npm/@photo-sphere-viewer/autorotate-plugin@{$PHOTOSPHERE_VERSION}/index.module.min.js"
         }
     }
 </script>
 
 <script type="module">
-    import { Viewer } from '@photo-sphere-viewer/core';
+    import { Viewer, EquirectangularAdapter } from '@photo-sphere-viewer/core';
     import { AutorotatePlugin } from '@photo-sphere-viewer/autorotate-plugin';
 
     const viewer = new Viewer({
         container: 'photoSphere',
-        panorama: '{$SPHERE_DERIVATIVE->get_url()}',
+        adapter: [EquirectangularAdapter, { shader:true }],
+        panorama: '{$SPHERE_DERIVATIVE}',
         defaultYaw: {$SPHERE_LONG} * 2*Math.PI - Math.PI,
         defaultPitch: {$SPHERE_LAT} * Math.PI,
         navbar: 'autorotate zoom move caption fullscreen',
