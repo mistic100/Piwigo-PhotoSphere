@@ -40,41 +40,90 @@ function photosphere_element_content($content, $element)
 
 function photosphere_thumbnails_list($pictures)
 {
-  global $template, $conf;
+  global $template, $conf, $user;
   
   if ($conf['PhotoSphere']['display_icon'])
   {
+    if ($user['theme'] == 'modus')
+    {
+      $status = [];
+      foreach ($pictures as $picture) {
+        $status[] = $picture['is_sphere'];
+      }
+      $template->assign('PHOTOSPHERE_STATUS', $status);
+    }
+
     $template->assign('PHOTOSPHERE_PATH', PHOTOSPHERE_PATH);
     
-    $template->set_prefilter('index_thumbnails', 'loc_begin_index_thumbnails_prefilter');
+    $template->set_prefilter('index_thumbnails', 'photosphere_index_thumbnails_prefilter', 100);
   }
 }
 
-function loc_begin_index_thumbnails_prefilter($content)
+function photosphere_index_thumbnails_prefilter($content)
 {
-  $search = '#(<li>|<li class="gthumb">)#';
-  $replace = '$1{strip}
-{if $thumbnail.is_sphere}<a href="{$thumbnail.URL}"><img src="{$ROOT_URL}{$PHOTOSPHERE_PATH}template/icon_sm.png" class="photosphere-icon"></a>{/if}
-{/strip}';
+  global $user;
 
-  $content.= '
+  if (defined('MASONRY') || defined('MASONRY_PATH')) // Mansonry Grid plugin
+  {
+    $search = '#(<div class="masonry-thumb".*>)#';
+  }
+  else if (defined('GDTHUMB_PATH')) // gdThumb plugin
+  {
+    $search = '#(<li class="gdthumb.*>)#';
+  }
+  else if (defined('GTHUMB_PATH')) // GThumb+ plugin
+  {
+    $search = '#(<li class="gthumb">)#';
+  }
+  else // core
+  {
+    $search = '#(<li>)#';
+
+    // hack for modus custom Smarty plugin
+    // the icon is added in Javascript because there is no way to alterthe output of the plugin
+    if ($user['theme'] == 'modus') {
+      $content = str_replace(
+        '{modus_thumbs}',
+        '{modus_thumbs}
+<script type="module">
+  const PHOTOSPHERE_STATUS = {$PHOTOSPHERE_STATUS|json_encode};
+  const PHOTOSPHERE_PATH = "{$ROOT_URL}{$PHOTOSPHERE_PATH}";
+  document.querySelectorAll("#thumbnails li").forEach((li, i) => {
+      if (PHOTOSPHERE_STATUS[i] === "1") {
+          const img = document.createElement("img");
+          img.src = PHOTOSPHERE_PATH + "template/icon_sm.png";
+          img.className = "photosphere-icon";
+          li.appendChild(img);
+      }
+  });
+</script>',
+        $content
+      );
+    }
+  }
+
+  return preg_replace(
+    $search,
+    '$1
+{if $thumbnail.is_sphere}<img src="{$ROOT_URL}{$PHOTOSPHERE_PATH}template/icon_sm.png" class="photosphere-icon">{/if}',
+    $content
+  ) . '
 {html_style}
 #thumbnails li {
-  position:relative !important;
-  display:inline-block;
+  position: relative;
+  display: inline-block;
 }
 .photosphere-icon {
-  width:32px;
-  height:32px;
-  position:absolute;
-  margin:-16px 0 0 -16px;
-  top:50%;
-  left:50%;
-  z-index:100 !important;
+  width: 48px !important;
+  height: 48px !important;
+  position: absolute;
+  margin: -24px 0 0 -24px;
+  top: 50%;
+  left: 50%;
+  z-index: 100;
+  pointer-events: none;
 }
 {/html_style}';
-
-  return preg_replace($search, $replace, $content);
 }
 
 function photosphere_admintools()
