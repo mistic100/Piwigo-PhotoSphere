@@ -26,54 +26,23 @@ GROUP BY i.id
         foreach (array('file', 'name') as $k) {
             $image[$k] = $row[$k];
         }
-
-        $image['name'] = strip_tags(trigger_change('render_element_name', $image['name'], __FUNCTION__) ?? '');
-
-        $image = array_merge($image, ws_std_get_urls($row));
+        $image['square_url'] = DerivativeImage::url(IMG_SQUARE, $row);
 
         $images[] = $image;
     }
 
-    return new PwgNamedArray(
-        $images,
-        'image',
-        ws_std_get_image_xml_attributes()
-    );
+    return new PwgNamedArray($images, 'image');
 }
 
 // FIXME implement ACL
 function photosphere_ws_getLinks($params, &$service)
 {
-    if ($params['recursive']) {
-        $query = '
-WITH RECURSIVE item_network AS (
-    SELECT ' . $params['image_id'] . ' AS item_id
-    UNION
-    SELECT CASE WHEN l.src_id = n.item_id THEN l.dst_id ELSE l.src_id END
-    FROM item_network n
-    JOIN ' . PHOTOSPHERE_LINKS_TABLE . ' l ON l.src_id = n.item_id OR l.dst_id = n.item_id
-)
-SELECT DISTINCT item_id 
-FROM item_network
-;';
-        $network_items = query2array($query, null, 'item_id');
-
-        $query = '
-SELECT *
-FROM ' . PHOTOSPHERE_LINKS_TABLE . ' l
-INNER JOIN ' . IMAGES_TABLE . ' i ON i.id = l.dst_id
-WHERE src_id IN(' . implode(',', $network_items) . ')
-AND dst_id IN(' . implode(',', $network_items) . ')
-;';
-    } else {
-        $query = '
+    $query = '
 SELECT *
 FROM ' . PHOTOSPHERE_LINKS_TABLE . ' l
 INNER JOIN ' . IMAGES_TABLE . ' i ON i.id = l.dst_id
 WHERE src_id = ' . $params['image_id'] . '
 ;';
-    }
-
     $result = pwg_query($query);
 
     $images = array();
@@ -88,22 +57,13 @@ WHERE src_id = ' . $params['image_id'] . '
         foreach (array('yaw', 'pitch', 'title', 'file', 'name') as $k) {
             $image[$k] = $row[$k];
         }
-
-        $image['name'] = strip_tags(trigger_change('render_element_name', $image['name'], __FUNCTION__) ?? '');
-
-        $derivative = DerivativeImage::get_one(IMG_SQUARE, $row);
-        $size = $derivative->get_size();
-        $image['square'] = array(
-            'url' => $derivative->get_url(),
-            'width' => (int)$size[0],
-            'height' => (int)$size[1]
-        );
+        $image['square_url'] = DerivativeImage::url(IMG_SQUARE, $row);
 
         $image_dst_ids[] = $image['dst_id'];
         $images[] = $image;
     }
 
-    if (!empty($image_dst_ids) && !$params['recursive']) {
+    if (!empty($image_dst_ids)) {
         $query = '
 SELECT src_id
 FROM ' . PHOTOSPHERE_LINKS_TABLE . '
@@ -117,9 +77,67 @@ AND dst_id = ' . $params['image_id'] . '
         }
     }
 
-    return new PwgNamedArray(
-        $images,
-        'link'
+    return new PwgNamedArray($images, 'link');
+}
+
+function photosphere_ws_getNetwork($params, &$service)
+{
+    $query = '
+WITH RECURSIVE item_network (item_id) AS (
+    SELECT ' . $params['image_id'] . '
+    UNION DISTINCT
+    SELECT CASE WHEN l.src_id = n.item_id THEN l.dst_id ELSE l.src_id END
+    FROM item_network AS n
+    JOIN ' . PHOTOSPHERE_LINKS_TABLE . ' AS l ON l.src_id = n.item_id OR l.dst_id = n.item_id
+)
+SELECT l.src_id, l.dst_id
+FROM ' . PHOTOSPHERE_LINKS_TABLE . ' AS l
+JOIN item_network AS src ON src.item_id = l.src_id
+JOIN item_network AS dst ON dst.item_id = l.dst_id
+;';
+    $links = query2array($query);
+
+    if (empty($links)) {
+        return array(
+            'images' => array(),
+            'links' => array(),
+        ); 
+    }
+
+    $image_ids = array();
+    foreach ($links as &$link) {
+        $link['src_id'] = (int) $link['src_id'];
+        $link['dst_id'] = (int) $link['dst_id'];
+        $image_ids[] = $link['src_id'];
+        $image_ids[] = $link['dst_id'];
+    }
+
+    $query = '
+SELECT *
+FROM ' . IMAGES_TABLE . '
+WHERE id IN(' . implode(',', array_unique($image_ids)) . ')
+;';
+    $result = pwg_query($query);
+
+    $images = array();
+    while ($row = pwg_db_fetch_assoc($result)) {
+        $image = array();
+        foreach (array('id', 'width', 'height') as $key) {
+            if (isset($row[$key])) {
+                $image[$key] = (int)$row[$key];
+            }
+        }
+        foreach (array('file', 'name') as $key) {
+            $image[$key] = $row[$key];
+        }
+        $image['square_url'] = DerivativeImage::url(IMG_SQUARE, $row);
+        
+        $images[] = $image;
+    }
+
+    return array(
+        'images' => new PwgNamedArray($images, 'image'),
+        'links' => new PwgNamedArray($links, 'link'),
     );
 }
 
@@ -187,7 +205,6 @@ DELETE FROM ' . PHOTOSPHERE_LINKS_TABLE . '
 WHERE src_id = ' . $params['src_id'] . '
 AND dst_id = ' . $params['dst_id'] . '
 ;';
-
     pwg_query($query);
 }
 

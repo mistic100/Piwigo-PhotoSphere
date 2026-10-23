@@ -32,7 +32,7 @@ class PhotoSphereEditorTourItem extends HTMLElement {
 
     #render() {
         this.innerHTML = `
-            <img src="${this.data.square.url}" alt="${this.data.file}">
+            <img src="${this.data.square_url}" alt="${this.data.file}">
 
             <div class="photo-sphere-editor-tour-item__content">
                 ${this.data.return_link ? `
@@ -100,8 +100,6 @@ export class PhotoSphereEditorPanelTour extends HTMLElement {
             this.#networkDialog.showAndLoad();
         });
 
-        setTimeout(() => this.#networkDialog.showAndLoad(), 1000);
-
         this.#searchDialog.addEventListener('close', () => {
             if (this.#searchDialog.returnValue) {
                 this.#prepareNewLink(JSON.parse(this.#searchDialog.returnValue));
@@ -162,8 +160,8 @@ export class PhotoSphereEditorPanelTour extends HTMLElement {
                 ${translate('Add a new link')}
             </button>
             <button class="buttonLike" type="button" data-network>
-                <i class="icon-share"></i>
-                ${translate('Show all')}
+                <i class="icon-network"></i>
+                ${translate('Network')}
             </button>
         </div>
 
@@ -330,7 +328,7 @@ export class PhotoSphereEditorPanelTour extends HTMLElement {
             title: null,
             file: image.file,
             name: image.name,
-            square: image.derivatives.square,
+            square_url: image.square_url,
         };
 
         this.#showNotification(translate('place_link_hint'));

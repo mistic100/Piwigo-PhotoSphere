@@ -18,6 +18,16 @@ import { MathUtils } from 'three';
  */
 
 /**
+ * @typedef {Object} Image
+ * @property {number} id
+ * @property {string} name
+ * @property {string} file
+ * @property {number} width
+ * @property {number} height
+ * @property {string} square_url
+ */
+
+/**
  * @typedef {Object} Link
  * @property {number} src_id
  * @property {number} dst_id
@@ -29,10 +39,7 @@ import { MathUtils } from 'three';
  * @property {string} title
  * @property {string} file
  * @property {string} name
- * @property {Object} square
- * @property {string} square.url
- * @property {number} square.width
- * @property {number} square.height
+ * @property {string} square_url
  */
 
 /**

@@ -24,9 +24,18 @@ function photosphere_ws_add_methods($arr)
         'photosphere_ws_getLinks',
         array(
             'image_id' => array('type' => WS_TYPE_ID),
-            'recursive' => array('type' => WS_TYPE_BOOL, 'default' => false),
         ),
         'Returns photo spheres links.',
+        PHOTOSPHERE_PATH . 'include/functions.ws.php'
+    );
+
+    $service->addMethod(
+        'psv.getNetwork',
+        'photosphere_ws_getNetwork',
+        array(
+            'image_id' => array('type' => WS_TYPE_ID),
+        ),
+        'Returns photo spheres full network.',
         PHOTOSPHERE_PATH . 'include/functions.ws.php'
     );
 

@@ -143,7 +143,7 @@ class PhotoSphereEditor extends HTMLElement {
         } catch {
             this.#markersPlugin.addMarker({
                 id: link.dst_id,
-                image: link.square.url,
+                image: link.square_url,
                 position: { yaw: link.yaw, pitch: link.pitch },
                 size: { width: 120, height: 120 },
                 tooltip: link.title || link.name,

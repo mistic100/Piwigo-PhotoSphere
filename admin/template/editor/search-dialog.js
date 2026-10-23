@@ -90,7 +90,7 @@ export class PhotoSphereEditorSearchDialog extends HTMLDialogElement {
             const btn = document.createElement('button');
             btn.classList.add('search-dialog-list__item');
             btn.innerHTML = `
-                <img src="${image.derivatives.square.url}" alt="${image.file}">
+                <img src="${image.square_url}" alt="${image.file}">
                 <span>${image.name}</span>
             `;
 

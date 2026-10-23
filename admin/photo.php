@@ -55,7 +55,7 @@ WHERE image_id = ' . $image_id . '
         ImageStdParams::get_custom($conf['PhotoSphere']['raw_width'], $conf['PhotoSphere']['raw_width'] / 2),
         $picture
     );
-    $picture['square_url'] = DerivativeImage::url('square', $picture);
+    $picture['square_url'] = DerivativeImage::url(IMG_SQUARE, $picture);
 }
 
 // Render
