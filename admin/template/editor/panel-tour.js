@@ -90,7 +90,7 @@ export class PhotoSphereEditorPanelTour extends HTMLElement {
             this.#searchDialog.showAndLoad(
                 categories(),
                 [
-                    parseInt(picture().id),
+                    picture().id,
                     ...this.#links.map(l => l.dst_id)
                 ]
             );

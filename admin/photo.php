@@ -41,7 +41,7 @@ WHERE id = ' . $image_id . '
 $picture = pwg_db_fetch_assoc(pwg_query($query));
 
 if (!$picture['is_sphere']) {
-    $page['warnings'][] = l10n('This photo is not a Photo Sphere, please  enabled it in the main properties tab.');
+    $page['warnings'][] = l10n('This photo is not a Photo Sphere, please enable it in the main properties tab.');
 } else {
     $query = '
 SELECT id, name
@@ -69,7 +69,7 @@ $template->assign(array(
     'TITLE' => render_element_name($picture),
     'categories' => @$categories,
     'picture' => array(
-        'id' => $picture['id'],
+        'id' => (int) $picture['id'],
         'name' => $picture['name'],
         'is_sphere' => $picture['is_sphere'],
         'image_url' => @$picture['image_url'],

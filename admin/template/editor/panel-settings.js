@@ -10,7 +10,7 @@ const DEFAULT_CONFIG = {
 };
 
 const SLIDERS = {
-    fov: { range: true, min: 1, max: 180 },
+    fov: { range: true, min: 10, max: 170 },
     defaultZoomLvl: { min: 0, max: 100 },
     pan: { min: -180, max: 180 },
     tilt: { min: -90, max: 90 },
@@ -232,11 +232,17 @@ export class PhotoSphereEditorPanelSettings extends HTMLElement {
 
         switch (prop) {
             case 'fov':
-                this.#config.fov = [...slider.values];
-                this.#dispatchConfig({
-                    minFov: this.#config.fov[0],
-                    maxFov: this.#config.fov[1],
-                });
+                if (this.#config.fov[0] !== slider.values[0]) {
+                    this.#config.fov[0] = slider.values[0];
+                    this.#dispatchConfig({
+                        minFov: this.#config.fov[0],
+                    });
+                } else if (this.#config.fov[1] !== slider.values[1]) {
+                    this.#config.fov[1] = slider.values[1];
+                    this.#dispatchConfig({
+                        maxFov: this.#config.fov[1],
+                    });
+                }
                 break;
             case 'defaultZoomLvl':
                 this.#config.defaultZoomLvl = slider.value;

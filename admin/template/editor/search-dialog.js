@@ -29,7 +29,13 @@ export class PhotoSphereEditorSearchDialog extends HTMLDialogElement {
 
     #render() {
         this.innerHTML = `
-        <h3>${translate('Select a photo')}</h3>
+        <header>
+            <h3>${translate('Select a photo')}</h3>
+
+            <button class="buttonLike" title="${translate('Close')}" data-close>
+                <i class="icon-cancel"></i>
+            </button>
+        </header>
 
         <label>
             <strong>${translate('Parent album')} :</strong>
@@ -41,10 +47,6 @@ export class PhotoSphereEditorSearchDialog extends HTMLDialogElement {
         </div>
 
         <div id="search-dialog-list"></div>
-
-        <button class="buttonLike" data-close>
-            ${translate('Cancel')}
-        </button>
         `;
     }
 

@@ -16,6 +16,7 @@ $lang['photosphere_tour_description'] = 'This configuration applies when definin
 $lang['Virtual tour'] = 'Virtual tour';
 $lang['Default link display mode'] = 'Default link display mode';
 $lang['Default link size'] = 'Default link size';
+$lang['This photo is not a Photo Sphere, please enable it in the main properties tab.'] = 'This photo is not a Photo Sphere, please enable it in the main properties tab.';
 
 $lang['photosphere_tour']['Linked photos'] = 'Linked photos';
 $lang['photosphere_tour']['Add a new link'] = 'Add a new link';

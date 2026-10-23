@@ -172,9 +172,18 @@ class PhotoSphereEditor extends HTMLElement {
      */
     #setConfig(values) {
         this.#viewer.setOptions(values);
-        this.#viewer.rotate({ yaw: 0, pitch: 0 });
+
         if ('defaultZoomLvl' in values) {
             this.#viewer.zoom(values.defaultZoomLvl);
+        } else if ('minFov' in values) {
+            // PSV ignore the command if the value is the same...
+            this.#viewer.zoom(99);
+            this.#viewer.zoom(100);
+        } else if ('maxFov' in values) {
+            this.#viewer.zoom(1);
+            this.#viewer.zoom(0);
+        } else if ('sphereCorrection' in values) {
+            this.#viewer.rotate({ yaw: 0, pitch: 0 });
         }
     }
 }

@@ -25,14 +25,15 @@ export class PhotoSphereEditorNetworkDialog extends HTMLDialogElement {
 
     #render() {
         this.innerHTML = `
-        <h3>${translate('Network')}</h3>
+        <header>
+            <h3>${translate('Network')}</h3>
+
+            <button class="buttonLike" title="${translate('Close')}" data-close>
+                <i class="icon-cancel"></i>
+            </button>
+        </header>
 
         <div id="network-graph"></div>
-
-        <button class="buttonLike" data-close>
-            <i class="icon-cancel"></i>
-            ${translate('Close')}
-        </button>
         `;
     }
 
@@ -99,10 +100,8 @@ export class PhotoSphereEditorNetworkDialog extends HTMLDialogElement {
             .attr('d', 'M0,-5L10,0L0,5')
             .attr('fill', d => LINK_COLOR.get(d));
 
-        defs.selectAll('clipPath')
-            .data(images)
-            .join('clipPath')
-            .attr('id', node => `clip-${node.id}`)
+        defs.append('clipPath')
+            .attr('id', 'node-clip')
             .append('circle')
             .attr('r', NODE_RADIUS);
 
@@ -152,13 +151,13 @@ export class PhotoSphereEditorNetworkDialog extends HTMLDialogElement {
             .attr('height', NODE_RADIUS * 2)
             .attr('href', d => d.square_url)
             .attr('preserveAspectRatio', 'xMidYMid slice')
-            .attr('clip-path', d => `url(#clip-${d.id})`);
+            .attr('clip-path', 'url(#node-clip)');
 
         node.append('circle')
             .attr('r', NODE_RADIUS)
             .attr('fill', 'none')
             .attr('stroke', '#fff')
-            .attr('stroke-width', 2);
+            .attr('stroke-width', d => d.id === picture().id ? 4 : 2);
 
         const simulation = d3.forceSimulation(images)
             .force('link', d3.forceLink(edges).id(d => d.id).distance(NODE_RADIUS * 4))
