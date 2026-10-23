@@ -1,12 +1,14 @@
 import { translate } from './data.js';
 
-class PhotoSphereEditorEditDialog extends HTMLDialogElement {
+export class PhotoSphereEditorEditDialog extends HTMLDialogElement {
     /** @type {import('./data.js').Link} */
     #link = null;
     /** @type {HTMLFormElement} */
     #form = null;
 
     connectedCallback() {
+        this.classList.add('photo-sphere-editor-dialog');
+
         this.#render();
 
         this.#form = this.querySelector('form');
@@ -27,7 +29,7 @@ class PhotoSphereEditorEditDialog extends HTMLDialogElement {
 
     #render() {
         this.innerHTML = `
-        <h3>Edit the link</h3>
+        <h3>${translate('Edit the link')}</h3>
 
         <form id="edit-link-form">
             <label>

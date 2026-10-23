@@ -5,6 +5,7 @@ import { MathUtils } from 'three';
  * @property {number} id
  * @property {string} name
  * @property {string} image_url
+ * @property {string} square_url
  * @property {Object} photosphere_config
  * @property {number} photosphere_config.minFov
  * @property {number} photosphere_config.maxFov
@@ -20,7 +21,7 @@ import { MathUtils } from 'three';
  * @typedef {Object} Link
  * @property {number} src_id
  * @property {number} dst_id
- * @property {boolean} return_link
+ * @property {boolean} [return_link]
  * @property {number} width
  * @property {number} height
  * @property {number} yaw

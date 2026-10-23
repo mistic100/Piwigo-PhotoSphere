@@ -2,6 +2,7 @@ import { EquirectangularAdapter, Viewer } from '@photo-sphere-viewer/core';
 import { MarkersPlugin } from '@photo-sphere-viewer/markers-plugin';
 import { init, picture, sphereCorrectionDegToRad } from './data.js';
 import './edit-dialog.js';
+import './network-dialog.js';
 import './panel-settings.js';
 import './panel-tour.js';
 import './panel.js';

@@ -20,6 +20,7 @@ $lang['photosphere_tour']['Yes'] = $lang['Yes'];
 $lang['photosphere_tour']['No'] = $lang['No'];
 $lang['photosphere_tour']['Edit'] = $lang['Edit'];
 $lang['photosphere_tour']['Delete'] = $lang['Delete'];
+$lang['photosphere_tour']['Close'] = $lang['Close'];
 $lang['photosphere_tour']['Cancel'] = $lang['Cancel'];
 $lang['photosphere_tour']['Edit photo'] = $lang['Edit photo'];
 $lang['photosphere_tour']['Parent album'] = $lang['Parent album'];
@@ -54,6 +55,7 @@ WHERE image_id = ' . $image_id . '
         ImageStdParams::get_custom($conf['PhotoSphere']['raw_width'], $conf['PhotoSphere']['raw_width'] / 2),
         $picture
     );
+    $picture['square_url'] = DerivativeImage::url('square', $picture);
 }
 
 // Render
@@ -70,7 +72,8 @@ $template->assign(array(
         'id' => $picture['id'],
         'name' => $picture['name'],
         'is_sphere' => $picture['is_sphere'],
-        'image_url' => $picture['image_url'],
+        'image_url' => @$picture['image_url'],
+        'square_url' => @$picture['square_url'],
         'photosphere_config' => safe_json_decode($picture['photosphere_config']),
     ),
 ));

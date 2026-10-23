@@ -12,6 +12,8 @@ export class PhotoSphereEditorSearchDialog extends HTMLDialogElement {
     #excludedImageIds = null;
 
     connectedCallback() {
+        this.classList.add('photo-sphere-editor-dialog');
+        
         this.#render();
 
         this.#select = this.querySelector('[name="search-dialog-album"]');

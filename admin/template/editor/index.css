@@ -21,7 +21,8 @@ photo-sphere-editor {
     h4,
     label,
     legend,
-    span {
+    span,
+    p {
         color: var(--text-color);
     }
 
@@ -38,24 +39,16 @@ photo-sphere-editor {
 }
 
 photo-sphere-editor-panel,
-dialog[is=photo-sphere-editor-search-dialog],
-dialog[is=photo-sphere-editor-edit-dialog] {
+.photo-sphere-editor-dialog {
     background: var(--bg-color);
     backdrop-filter: blur(5px);
     border-radius: 12px;
     padding: 6px;
     border: 1px solid var(--text-color);
     overflow: hidden;
-
-    h3 {
-        margin: 0 0 10px 0 !important;
-        padding: 0 0 5px 0 !important;
-        border-bottom: 1px solid currentColor !important;
-    }
 }
 
-dialog[is=photo-sphere-editor-search-dialog],
-dialog[is=photo-sphere-editor-edit-dialog] {
+.photo-sphere-editor-dialog {
     min-width: 400px;
     max-width: 75vw;
     box-shadow: 0 10px 20px var(--bg-color);
@@ -64,10 +57,33 @@ dialog[is=photo-sphere-editor-edit-dialog] {
         background: var(--bg-color);
     }
 
+    h3 {
+        margin: -6px -6px 10px -6px !important;
+        padding: 10px !important;
+        background: var(--bg-color);
+    }
+
     label {
         display: flex;
         flex-direction: column;
         margin-bottom: 1em;
+    }
+
+    &[is="photo-sphere-editor-network-dialog"] {
+        min-width: 75vw;
+
+        #network-graph {
+            width: 100%;
+            height: min(65vh, 600px);
+            min-height: 300px;
+            overflow: hidden;
+
+            svg {
+                display: block;
+                width: 100%;
+                height: 100%;
+            }
+        }
     }
 }
 

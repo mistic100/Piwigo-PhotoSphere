@@ -64,10 +64,10 @@ export class PhotoSphereEditorPanelTour extends HTMLElement {
 
     /** @type {import('./search-dialog.js').PhotoSphereEditorSearchDialog} */
     #searchDialog = null;
-    /** @type {HTMLElement} */
+    /** @type {import('./edit-dialog.js').PhotoSphereEditorEditDialog} */
     #editDialog = null;
-    /** @type {HTMLElement} */
-    #addPhotoBtn = null;
+    /** @type {import('./network-dialog.js').PhotoSphereEditorNetworkDialog} */
+    #networkDialog = null;
     /** @type {HTMLElement} */
     #list = null;
 
@@ -83,10 +83,10 @@ export class PhotoSphereEditorPanelTour extends HTMLElement {
 
         this.#searchDialog = this.querySelector('dialog[is=photo-sphere-editor-search-dialog]');
         this.#editDialog = this.querySelector('dialog[is=photo-sphere-editor-edit-dialog]');
-        this.#addPhotoBtn = this.querySelector('#add-photo-btn');
+        this.#networkDialog = this.querySelector('dialog[is=photo-sphere-editor-network-dialog]');
         this.#list = this.querySelector('#links-list');
 
-        this.#addPhotoBtn.addEventListener('click', () => {
+        this.querySelector('[data-add-photo]').addEventListener('click', () => {
             this.#searchDialog.showAndLoad(
                 categories(),
                 [
@@ -95,6 +95,12 @@ export class PhotoSphereEditorPanelTour extends HTMLElement {
                 ]
             );
         });
+
+        this.querySelector('[data-network]').addEventListener('click', () => {
+            this.#networkDialog.showAndLoad();
+        });
+
+        setTimeout(() => this.#networkDialog.showAndLoad(), 1000);
 
         this.#searchDialog.addEventListener('close', () => {
             if (this.#searchDialog.returnValue) {
@@ -150,15 +156,22 @@ export class PhotoSphereEditorPanelTour extends HTMLElement {
 
     #render() {
         this.innerHTML = `
-        <button class="buttonLike" type="button" id="add-photo-btn">
-            <i class="icon-plus"></i>
-            ${translate('Add a new link')}
-        </button>
+        <div>
+            <button class="buttonLike" type="button" data-add-photo>
+                <i class="icon-plus"></i>
+                ${translate('Add a new link')}
+            </button>
+            <button class="buttonLike" type="button" data-network>
+                <i class="icon-share"></i>
+                ${translate('Show all')}
+            </button>
+        </div>
 
         <div id="links-list"></div>
 
         <dialog is="photo-sphere-editor-search-dialog"></dialog>
         <dialog is="photo-sphere-editor-edit-dialog"></dialog>
+        <dialog is="photo-sphere-editor-network-dialog"></dialog>
         `;
     }
 
