@@ -54,7 +54,7 @@ export class PhotoSphereEditorSearchDialog extends HTMLDialogElement {
      * @param {Category[]} categories 
      * @param {number[]} excludeImageIds 
      */
-    showAndLoad(categories, excludeImageIds = []) {
+    loadAndShow(categories, excludeImageIds = []) {
         this.#excludedImageIds = excludeImageIds;
 
         this.#select.replaceChildren(
@@ -66,8 +66,8 @@ export class PhotoSphereEditorSearchDialog extends HTMLDialogElement {
             })
         );
 
-        this.showModal();
         this.#loadImages(categories[0].id);
+        this.showModal();
     }
 
     /**

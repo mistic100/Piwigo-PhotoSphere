@@ -1,7 +1,7 @@
 import { translate } from './data.js';
 
 export class PhotoSphereEditorEditDialog extends HTMLDialogElement {
-    /** @type {import('./data.js').Link} */
+    /** @type {import('./data.js').Linked} */
     #link = null;
     /** @type {HTMLFormElement} */
     #form = null;
@@ -50,7 +50,7 @@ export class PhotoSphereEditorEditDialog extends HTMLDialogElement {
     }
     
     /**
-     * @param {import('./data.js').Link} link
+     * @param {import('./data.js').Linked} link
      */
     showAndLoad(link) {
         this.#link = link;

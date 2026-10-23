@@ -28,7 +28,7 @@ import { MathUtils } from 'three';
  */
 
 /**
- * @typedef {Object} Link
+ * @typedef {Object} Linked
  * @property {number} src_id
  * @property {number} dst_id
  * @property {boolean} [return_link]
@@ -40,6 +40,14 @@ import { MathUtils } from 'three';
  * @property {string} file
  * @property {string} name
  * @property {string} square_url
+ */
+
+/**
+ * @typedef {Object} Link
+ * @property {number} src_id
+ * @property {number} dst_id
+ * @property {Image} src
+ * @property {Image} dst
  */
 
 /**
@@ -96,4 +104,11 @@ export function sphereCorrectionDegToRad(sphereCorrection) {
         tilt: MathUtils.degToRad(sphereCorrection?.tilt ?? 0),
         roll: MathUtils.degToRad(sphereCorrection?.roll ?? 0),
     };
+}
+
+/**
+ * @param {number} id 
+ */
+export function gotoImage(id) {
+    location.href = `${rootUrl()}admin.php?page=plugin-PhotoSphere-photo&image_id=${id}`;
 }

@@ -1,7 +1,7 @@
-import { categories, picture, pwgToken, rootUrl, translate } from './data.js';
+import { categories, gotoImage, picture, pwgToken, translate } from './data.js';
 
 class PhotoSphereEditorTourItem extends HTMLElement {
-    /** @type {import('./data.js').Link} */
+    /** @type {import('./data.js').Linked} */
     data = null;
 
     connectedCallback() {
@@ -24,7 +24,7 @@ class PhotoSphereEditorTourItem extends HTMLElement {
         });
 
         this.querySelector('[data-open]').addEventListener('click', () => {
-            location.href = `${rootUrl()}admin.php?page=plugin-PhotoSphere-photo&image_id=${this.data.dst_id}`;
+            gotoImage(this.data.dst_id);
         });
 
         $(this.querySelectorAll('.tiptip')).tipTip({ delay: 100 });
@@ -71,7 +71,7 @@ export class PhotoSphereEditorPanelTour extends HTMLElement {
     /** @type {HTMLElement} */
     #list = null;
 
-    /** @type {import('./data.js').Link} */
+    /** @type {import('./data.js').Linked} */
     #tempLink = null;
 
     get #links() {
@@ -87,7 +87,7 @@ export class PhotoSphereEditorPanelTour extends HTMLElement {
         this.#list = this.querySelector('#links-list');
 
         this.querySelector('[data-add-photo]').addEventListener('click', () => {
-            this.#searchDialog.showAndLoad(
+            this.#searchDialog.loadAndShow(
                 categories(),
                 [
                     picture().id,
@@ -97,7 +97,7 @@ export class PhotoSphereEditorPanelTour extends HTMLElement {
         });
 
         this.querySelector('[data-network]').addEventListener('click', () => {
-            this.#networkDialog.showAndLoad();
+            this.#networkDialog.loadAndShow();
         });
 
         this.#searchDialog.addEventListener('close', () => {
@@ -128,20 +128,23 @@ export class PhotoSphereEditorPanelTour extends HTMLElement {
         }, { capture: true });
 
         this.#list.addEventListener('delete-link', (e) => {
+            /** @type {import('./data.js').Linked} */
+            const link = e.detail;
+
             e.stopImmediatePropagation();
             $.confirm({
-                title: translate('Delete link to "{0}" ?', e.detail.name),
+                title: translate('Delete link to "{0}" ?', link.name),
                 content: '',
                 buttons: {
                     confirm: {
                         text: translate('Yes'),
                         btnClass: 'btn-red',
-                        action: () => this.#deleteLink(e.detail, false),
+                        action: () => this.#deleteLink(link, false),
                     },
-                    confirm2: e.detail.return_link ? {
+                    confirm2: link.return_link ? {
                         text: translate('Yes, and the return link'),
                         btnClass: 'btn-red',
-                        action: () => this.#deleteLink(e.detail, true),
+                        action: () => this.#deleteLink(link, true),
                     } : undefined,
                     cancel: {
                         text: translate('No'),
@@ -150,6 +153,31 @@ export class PhotoSphereEditorPanelTour extends HTMLElement {
                 ...jConfirm_confirm_options
             });
         }, { capture: true });
+
+        this.#networkDialog.addEventListener('delete-link', (e) => {
+            /** @type {import('./data.js').Link} */
+            const link = e.detail;
+
+            $.confirm({
+                title: translate('Delete link to "{0}" ?', link.dst.name),
+                content: '',
+                buttons: {
+                    confirm: {
+                        text: translate('Yes'),
+                        btnClass: 'btn-red',
+                        action: async () => {
+                            await this.#deleteLink(link, true);
+                            this.#networkDialog.removeLink(link);
+                        }
+                    },
+                    cancel: {
+                        text: translate('No'),
+                    },
+                },
+                container: this.#networkDialog,
+                ...jConfirm_confirm_options
+            });
+        });
     }
 
     #render() {
@@ -210,7 +238,7 @@ export class PhotoSphereEditorPanelTour extends HTMLElement {
     }
 
     /**
-     * @param {import('./data.js').Link[]} links
+     * @param {import('./data.js').Linked[]} links
      */
     setLinks(links) {
         links.forEach(link => {
@@ -219,7 +247,7 @@ export class PhotoSphereEditorPanelTour extends HTMLElement {
     }
 
     /**
-     * @param {import('./data.js').Link} link
+     * @param {import('./data.js').Linked} link
      */
     #addLinkItem(link) {
         const existingLink = this.#list.querySelector(`[data-dst-id="${link.dst_id}"]`);
@@ -236,7 +264,7 @@ export class PhotoSphereEditorPanelTour extends HTMLElement {
     }
 
     /**
-     * @param {import('./data.js').Link} link
+     * @param {import('./data.js').Linked} link
      * @param {boolean} createReturn 
      */
     async #addEditLink(link, createReturn) {
@@ -279,7 +307,7 @@ export class PhotoSphereEditorPanelTour extends HTMLElement {
     }
 
     /**
-     * @param {import('./data.js').Link} link
+     * @param {import('./data.js').Linked | import('./data.js').Link} link
      * @param {boolean} deleteReturn
      */
     async #deleteLink(link, deleteReturn) {
@@ -309,9 +337,11 @@ export class PhotoSphereEditorPanelTour extends HTMLElement {
             });
         }
 
-        this.#list.querySelector(`[data-dst-id="${link.dst_id}"]`).remove();
+        if (link.src_id === picture().id) {
+            this.#list.querySelector(`[data-dst-id="${link.dst_id}"]`).remove();
 
-        this.dispatchEvent(new CustomEvent('delete-marker', { detail: link, bubbles: true }));
+            this.dispatchEvent(new CustomEvent('delete-marker', { detail: link, bubbles: true }));
+        }
     }
 
     /**
@@ -335,7 +365,7 @@ export class PhotoSphereEditorPanelTour extends HTMLElement {
     }
 
     /**
-     * @param {import('./data.js').Link} link
+     * @param {import('./data.js').Linked} link
      */
     #prepareMoveLink(link) {
         this.#tempLink = link;
