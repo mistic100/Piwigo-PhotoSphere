@@ -78,6 +78,11 @@ export function pwgToken() {
     return data.pwgToken;
 }
 
+/** @return {Object} */
+export function config() {
+    return data.config;
+}
+
 /** @return {Picture} */
 export function picture() {
     return data.picture;

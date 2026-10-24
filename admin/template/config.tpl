@@ -67,7 +67,7 @@
           {'Default link display mode'|translate} :
           <select name="tour_link_mode" id="tour_link_mode">
             <option value="thumbnail" {if $PhotoSphere.tour.link_mode == 'thumbnail'}selected{/if}>{'Thumbnail'|translate}</option>
-            <option value="circle" {if $PhotoSphere.tour.link_mode == 'circle'}selected{/if}>{'Circle'|translate}</option>
+            <option value="arrow" {if $PhotoSphere.tour.link_mode == 'arrow'}selected{/if}>{'Arrow'|translate}</option>
           </select>
         </label>
       </li>

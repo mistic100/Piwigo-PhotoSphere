@@ -1,10 +1,12 @@
 {combine_script id='jquery.confirm' load='async' require='jquery' path='themes/default/js/plugins/jquery-confirm.min.js'}
-{combine_script id='jquery.ui.slider' load='async' require='jquery.ui' path='themes/default/js/ui/minified/jquery.ui.slider.min.js'}
 {combine_css path="themes/default/js/plugins/jquery-confirm.min.css"}
+{combine_script id='jquery.ui.slider' load='async' require='jquery.ui' path='themes/default/js/ui/minified/jquery.ui.slider.min.js'}
 {combine_css path="themes/default/js/ui/theme/jquery.ui.slider.css"}
 {combine_script id='common' load='footer' path='admin/themes/default/js/common.js'}
+
 {combine_css path="`$PHOTOSPHERE_PATH`admin/template/editor/index.css"}
-{combine_css path="`$PHOTOSPHERE_PATH`template/markers.css"}
+{combine_script id='photo-sphere-marker' load='footer' path="`$PHOTOSPHERE_PATH`template/marker.js"}
+{combine_css path="`$PHOTOSPHERE_PATH`template/marker.css"}
 
 {html_head}
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@photo-sphere-viewer/core@{$PHOTOSPHERE_VERSION}/index.min.css" />

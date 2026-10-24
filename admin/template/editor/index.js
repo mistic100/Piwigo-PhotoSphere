@@ -1,6 +1,6 @@
 import { EquirectangularAdapter, Viewer } from '@photo-sphere-viewer/core';
 import { MarkersPlugin } from '@photo-sphere-viewer/markers-plugin';
-import { init, picture, sphereCorrectionDegToRad } from './data.js';
+import { config, init, picture, sphereCorrectionDegToRad } from './data.js';
 import './network-dialog.js';
 import './panel-settings.js';
 import './panel-tour.js';
@@ -84,8 +84,12 @@ class PhotoSphereEditor extends HTMLElement {
             }
         });
 
-        this.#panel.addEventListener('add-edit-marker', (e) => {
-            this.#addEditMarker(e.detail);
+        this.#panel.addEventListener('add-marker', (e) => {
+            this.#addMarker(e.detail);
+        });
+
+        this.#panel.addEventListener('move-marker', (e) => {
+            this.#moveMarker(e.detail);
         });
 
         this.#panel.addEventListener('delete-marker', (e) => {
@@ -125,31 +129,24 @@ class PhotoSphereEditor extends HTMLElement {
 
         this.#panel.setLinks(result);
 
-        result.forEach(link => this.#addEditMarker(link));
+        result.forEach(link => this.#addMarker(link));
     }
 
     /**
      * @param {import('./data.js').Link} link 
      */
-    #addEditMarker(link) {
-        try {
-            this.#markersPlugin.getMarker(link.dst_id);
-            this.#markersPlugin.updateMarker({
-                id: link.dst_id,
-                position: { yaw: link.yaw, pitch: link.pitch },
-                tooltip: link.name,
-            });
-        } catch {
-            this.#markersPlugin.addMarker({
-                id: link.dst_id,
-                image: link.square_url,
-                position: { yaw: link.yaw, pitch: link.pitch },
-                size: { width: 120, height: 120 },
-                tooltip: link.name,
-                className: 'photosphere-marker',
-                hoverScale: { amount: 1.1, easing: 'ease-in-out', duration: 200 },
-            });
-        }
+    #addMarker(link) {
+        this.#markersPlugin.addMarker(PhotoSphereMarkerElement.build(link, config().tour));
+    }
+
+    /**
+     * @param {import('./data.js').Link} link 
+     */
+    #moveMarker(link) {
+        this.#markersPlugin.updateMarker({
+            id: link.dst_id,
+            position: { yaw: link.yaw, pitch: link.pitch },
+        });
     }
 
     /**

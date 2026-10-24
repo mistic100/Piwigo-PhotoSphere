@@ -206,17 +206,17 @@ export class PhotoSphereEditorPanelTour extends HTMLElement {
                         confirm: {
                             text: translate('Yes'),
                             btnClass: 'btn-green',
-                            action: () => this.#addEditLink(link, true),
+                            action: () => this.#addLink(link, true),
                         },
                         cancel: {
                             text: translate('No'),
-                            action: () => this.#addEditLink(link, false),
+                            action: () => this.#addLink(link, false),
                         },
                     },
                     ...jConfirm_confirm_options
                 });
             } else {
-                this.#addEditLink(link, false);
+                this.#moveLink(link);
             }
         }
     }
@@ -225,6 +225,8 @@ export class PhotoSphereEditorPanelTour extends HTMLElement {
      * @param {import('./data.js').Linked[]} links
      */
     setLinks(links) {
+        this.#list.replaceChildren();
+
         links.forEach(link => {
             this.#addLinkItem(link);
         });
@@ -234,24 +236,18 @@ export class PhotoSphereEditorPanelTour extends HTMLElement {
      * @param {import('./data.js').Linked} link
      */
     #addLinkItem(link) {
-        const existingLink = this.#getLinkItem(link.dst_id);
-
         const item = document.createElement('photo-sphere-editor-tour-item');
         item.setAttribute('data-dst-id', link.dst_id);
         item.data = link;
 
-        if (existingLink) {
-            this.#list.replaceChild(item, existingLink);
-        } else {
-            this.#list.appendChild(item);
-        }
+        this.#list.appendChild(item);
     }
 
     /**
      * @param {import('./data.js').Linked} link
      * @param {boolean} createReturn 
      */
-    async #addEditLink(link, createReturn) {
+    async #addLink(link, createReturn) {
         await $.ajax({
             url: `/ws.php?format=json&method=psv.addLink`,
             type: 'POST',
@@ -287,7 +283,28 @@ export class PhotoSphereEditorPanelTour extends HTMLElement {
         this.#addLinkItem(link);
         this.#cancelTempLink();
 
-        this.dispatchEvent(new CustomEvent('add-edit-marker', { detail: link, bubbles: true }));
+        this.dispatchEvent(new CustomEvent('add-marker', { detail: link, bubbles: true }));
+    }
+
+    /**
+     * @param {import('./data.js').Linked} link
+     */
+    async #moveLink(link) {
+        this.#cancelTempLink();
+
+        await $.ajax({
+            url: `/ws.php?format=json&method=psv.addLink`,
+            type: 'POST',
+            dataType: 'json',
+            data: {
+                ...link,
+                pwg_token: pwgToken(),
+            },
+        });
+
+        this.#getLinkItem(link.dst_id).data = link;
+
+        this.dispatchEvent(new CustomEvent('move-marker', { detail: link, bubbles: true }));
     }
 
     /**
