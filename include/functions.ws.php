@@ -54,7 +54,7 @@ WHERE src_id = ' . $params['image_id'] . '
                 $image[$k] = (int)$row[$k];
             }
         }
-        foreach (array('yaw', 'pitch', 'title', 'file', 'name') as $k) {
+        foreach (array('yaw', 'pitch', 'file', 'name') as $k) {
             $image[$k] = $row[$k];
         }
         $image['square_url'] = DerivativeImage::url(IMG_SQUARE, $row);
@@ -169,7 +169,6 @@ WHERE id IN(' . $params['src_id'] . ',' . $params['dst_id'] . ')
         'dst_id' => $params['dst_id'],
         'yaw' => $params['yaw'],
         'pitch' => $params['pitch'],
-        'title' => $params['title']
     );
 
     $query = '

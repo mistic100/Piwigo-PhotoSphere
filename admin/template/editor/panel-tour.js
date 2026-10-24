@@ -11,10 +11,6 @@ class PhotoSphereEditorTourItem extends HTMLElement {
             this.dispatchEvent(new CustomEvent('goto-marker', { detail: this.data, bubbles: true }));
         });
 
-        this.querySelector('[data-edit]').addEventListener('click', () => {
-            this.dispatchEvent(new CustomEvent('edit-link', { detail: this.data }));
-        });
-
         this.querySelector('[data-delete]').addEventListener('click', () => {
             this.dispatchEvent(new CustomEvent('delete-link', { detail: this.data }));
         });
@@ -48,7 +44,6 @@ class PhotoSphereEditorTourItem extends HTMLElement {
 
                 <div class="photo-sphere-editor-tour-item__buttons">
                     <button type="button" class="tiptip icon-eye" title="${translate('Goto')}" data-goto></button>
-                    <button type="button" class="tiptip icon-cog" title="${translate('Edit')}" data-edit></button>
                     <button type="button" class="tiptip icon-move" title="${translate('Change position')}" data-move></button>
                     <button type="button" class="tiptip icon-trash" title="${translate('Delete')}" data-delete></button>
                     <button type="button" class="tiptip icon-picture" title="${translate('Edit photo')}" data-open></button>
@@ -64,8 +59,6 @@ export class PhotoSphereEditorPanelTour extends HTMLElement {
 
     /** @type {import('./search-dialog.js').PhotoSphereEditorSearchDialog} */
     #searchDialog = null;
-    /** @type {import('./edit-dialog.js').PhotoSphereEditorEditDialog} */
-    #editDialog = null;
     /** @type {import('./network-dialog.js').PhotoSphereEditorNetworkDialog} */
     #networkDialog = null;
     /** @type {HTMLElement} */
@@ -82,7 +75,6 @@ export class PhotoSphereEditorPanelTour extends HTMLElement {
         this.#render();
 
         this.#searchDialog = this.querySelector('dialog[is=photo-sphere-editor-search-dialog]');
-        this.#editDialog = this.querySelector('dialog[is=photo-sphere-editor-edit-dialog]');
         this.#networkDialog = this.querySelector('dialog[is=photo-sphere-editor-network-dialog]');
         this.#list = this.querySelector('#links-list');
 
@@ -106,10 +98,8 @@ export class PhotoSphereEditorPanelTour extends HTMLElement {
             }
         });
 
-        this.#editDialog.addEventListener('close', () => {
-            if (this.#editDialog.returnValue) {
-                this.#addEditLink(JSON.parse(this.#editDialog.returnValue));
-            }
+        this.#list.addEventListener('goto-marker', () => {
+            this.#cancelTempLink();
         });
 
         this.#list.addEventListener('move-link', (e) => {
@@ -118,13 +108,8 @@ export class PhotoSphereEditorPanelTour extends HTMLElement {
                 this.#cancelTempLink();
             } else {
                 this.#prepareMoveLink(e.detail);
+                this.dispatchEvent(new CustomEvent('goto-marker', { detail: e.detail, bubbles: true }));
             }
-        }, { capture: true });
-
-        this.#list.addEventListener('edit-link', (e) => {
-            e.stopImmediatePropagation();
-            this.#cancelTempLink();
-            this.#editDialog.showAndLoad(e.detail);
         }, { capture: true });
 
         this.#list.addEventListener('delete-link', (e) => {
@@ -196,7 +181,6 @@ export class PhotoSphereEditorPanelTour extends HTMLElement {
         <div id="links-list"></div>
 
         <dialog is="photo-sphere-editor-search-dialog"></dialog>
-        <dialog is="photo-sphere-editor-edit-dialog"></dialog>
         <dialog is="photo-sphere-editor-network-dialog"></dialog>
         `;
     }
@@ -250,7 +234,7 @@ export class PhotoSphereEditorPanelTour extends HTMLElement {
      * @param {import('./data.js').Linked} link
      */
     #addLinkItem(link) {
-        const existingLink = this.#list.querySelector(`[data-dst-id="${link.dst_id}"]`);
+        const existingLink = this.#getLinkItem(link.dst_id);
 
         const item = document.createElement('photo-sphere-editor-tour-item');
         item.setAttribute('data-dst-id', link.dst_id);
@@ -338,7 +322,7 @@ export class PhotoSphereEditorPanelTour extends HTMLElement {
         }
 
         if (link.src_id === picture().id) {
-            this.#list.querySelector(`[data-dst-id="${link.dst_id}"]`).remove();
+            this.#getLinkItem(link.dst_id).remove();
 
             this.dispatchEvent(new CustomEvent('delete-marker', { detail: link, bubbles: true }));
         }
@@ -348,6 +332,7 @@ export class PhotoSphereEditorPanelTour extends HTMLElement {
      * @param {Object} image
      */
     #prepareNewLink(image) {
+        /** @type {import('./data.js').Linked} */
         this.#tempLink = {
             src_id: picture().id,
             dst_id: image.id,
@@ -355,7 +340,6 @@ export class PhotoSphereEditorPanelTour extends HTMLElement {
             height: image.height,
             yaw: null,
             pitch: null,
-            title: null,
             file: image.file,
             name: image.name,
             square_url: image.square_url,
@@ -379,8 +363,19 @@ export class PhotoSphereEditorPanelTour extends HTMLElement {
         }
     }
 
+    /**
+     * @param {sstring} message 
+     */
     #showNotification(message) {
         this.dispatchEvent(new CustomEvent('notification', { detail: message, bubbles: true }));
+    }
+
+    /**
+     * @param {number} id 
+     * @returns {PhotoSphereEditorTourItem}
+     */
+    #getLinkItem(id) {
+        return this.#list.querySelector(`[data-dst-id="${id}"]`);
     }
 
 }

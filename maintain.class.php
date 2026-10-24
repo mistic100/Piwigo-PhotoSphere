@@ -63,7 +63,6 @@ CREATE TABLE IF NOT EXISTS `' . $this->table . '` (
   `dst_id` mediumint(5) unsigned NOT NULL,
   `yaw` double(5, 4) NOT NULL,
   `pitch` double(5, 4) NOT NULL,
-  `title` text default NULL,
   PRIMARY KEY  (`src_id`,`dst_id`),
   KEY `src_id` (`src_id`)
 ) ENGINE=MyISAM;

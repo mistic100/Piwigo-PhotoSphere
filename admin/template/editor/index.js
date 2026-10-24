@@ -1,7 +1,6 @@
 import { EquirectangularAdapter, Viewer } from '@photo-sphere-viewer/core';
 import { MarkersPlugin } from '@photo-sphere-viewer/markers-plugin';
 import { init, picture, sphereCorrectionDegToRad } from './data.js';
-import './edit-dialog.js';
 import './network-dialog.js';
 import './panel-settings.js';
 import './panel-tour.js';
@@ -138,7 +137,7 @@ class PhotoSphereEditor extends HTMLElement {
             this.#markersPlugin.updateMarker({
                 id: link.dst_id,
                 position: { yaw: link.yaw, pitch: link.pitch },
-                tooltip: link.title || link.name,
+                tooltip: link.name,
             });
         } catch {
             this.#markersPlugin.addMarker({
@@ -146,7 +145,7 @@ class PhotoSphereEditor extends HTMLElement {
                 image: link.square_url,
                 position: { yaw: link.yaw, pitch: link.pitch },
                 size: { width: 120, height: 120 },
-                tooltip: link.title || link.name,
+                tooltip: link.name,
                 className: 'photosphere-marker',
                 hoverScale: { amount: 1.1, easing: 'ease-in-out', duration: 200 },
             });

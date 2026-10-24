@@ -29,7 +29,6 @@ $lang['photosphere_tour']['Create return link from "{0}" ?'] = 'Create return li
 $lang['photosphere_tour']['place_link_hint'] = 'Click on the panorama where you want to place the link.';
 $lang['photosphere_tour']['Select a photo'] = 'Select a photo';
 $lang['photosphere_tour']['No photo available'] = 'No photo available';
-$lang['photosphere_tour']['Override photo title'] = 'Override photo title';
 $lang['photosphere_tour']['Allowed field of view'] = 'Allowed field of view';
 $lang['photosphere_tour']['Defaut zoom level'] = 'Defaut zoom level';
 $lang['photosphere_tour']['Fisheye'] = 'Fisheye';

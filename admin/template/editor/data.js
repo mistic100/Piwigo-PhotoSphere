@@ -36,7 +36,6 @@ import { MathUtils } from 'three';
  * @property {number} height
  * @property {number} yaw
  * @property {number} pitch
- * @property {string} title
  * @property {string} file
  * @property {string} name
  * @property {string} square_url

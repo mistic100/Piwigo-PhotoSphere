@@ -47,7 +47,6 @@ function photosphere_ws_add_methods($arr)
             'dst_id' => array('type' => WS_TYPE_ID),
             'yaw' => array('type' => WS_TYPE_FLOAT),
             'pitch' => array('type' => WS_TYPE_FLOAT),
-            'title' => array('default' => null),
             'pwg_token' => array(),
         ),
         'Add/edit a photo sphere link.',
