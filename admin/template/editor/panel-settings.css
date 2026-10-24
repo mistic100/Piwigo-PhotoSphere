@@ -1,0 +1,22 @@
+photo-sphere-editor-panel-settings {
+    form {
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+
+    fieldset {
+        margin: 0 0 var(--spacing) 0;
+        border: none;
+        border-radius: var(--border-radius);
+        background: var(--highlight-color);
+    }
+
+    .slider-bar-wrapper {
+        margin: var(--spacing);
+        margin-bottom: calc(var(--spacing) * 2);
+    }
+
+    [data-slider-value] {
+        color: var(--piwigo-color);
+    }
+}

@@ -172,9 +172,8 @@ export class PhotoSphereEditorNetworkDialog extends HTMLDialogElement {
             .attr('height', 30)
             .append('xhtml:button')
             .attr('type', 'button')
-            .attr('class', 'network-edge__button')
+            .attr('class', 'network-edge__button icon-trash')
             .attr('title', translate('Delete'))
-            .html('<i class="icon-trash"></i>')
             .on('click', (_, link) => {
                 this.dispatchEvent(new CustomEvent('delete-link', { detail: link }));
             });

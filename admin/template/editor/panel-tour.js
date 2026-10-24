@@ -30,9 +30,9 @@ class PhotoSphereEditorTourItem extends HTMLElement {
         this.innerHTML = `
             <img src="${this.data.square_url}" alt="${this.data.file}">
 
-            <div class="photo-sphere-editor-tour-item__content">
+            <div class="tour-item__content">
                 ${this.data.return_link ? `
-                    <span class="photo-sphere-editor-tour-item__return tiptip icon-exchange"
+                    <span class="tour-item__return tiptip icon-exchange"
                           title="${translate('Has return link')}"></span>
                 ` : ''}
 
@@ -42,7 +42,7 @@ class PhotoSphereEditorTourItem extends HTMLElement {
                     <span>${this.data.name}</span>
                 </span>
 
-                <div class="photo-sphere-editor-tour-item__buttons">
+                <div class="tour-item__buttons">
                     <button type="button" class="tiptip icon-eye" title="${translate('Goto')}" data-goto></button>
                     <button type="button" class="tiptip icon-move" title="${translate('Change position')}" data-move></button>
                     <button type="button" class="tiptip icon-trash" title="${translate('Delete')}" data-delete></button>

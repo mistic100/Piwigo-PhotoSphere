@@ -1,0 +1,33 @@
+dialog[is="photo-sphere-editor-network-dialog"] {
+    #network-graph {
+        width: 100%;
+        height: min(75vh, 800px);
+        overflow: hidden;
+
+        svg {
+            display: block;
+            width: 100%;
+            height: 100%;
+        }
+    }
+
+    .network-edge__button {
+        width: 26px;
+        height: 26px;
+        padding: 0;
+        border: 1px solid var(--piwigo-color);
+        border-radius: var(--border-radius-s);
+        background: var(--bg-color);
+        color: var(--piwigo-color);
+        cursor: pointer;
+        opacity: 0;
+        transition: opacity 100ms ease-in-out;
+        font-size: 18px;
+    }
+
+    .network-edge:hover .network-edge__button,
+    .network-edge:focus-within .network-edge__button {
+        opacity: 1;
+        pointer-events: auto;
+    }
+}
