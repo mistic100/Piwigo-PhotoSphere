@@ -108,7 +108,6 @@ export class PhotoSphereEditorPanelTour extends HTMLElement {
                 this.#cancelTempLink();
             } else {
                 this.#prepareMoveLink(e.detail);
-                this.dispatchEvent(new CustomEvent('goto-marker', { detail: e.detail, bubbles: true }));
             }
         }, { capture: true });
 

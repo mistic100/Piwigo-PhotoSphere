@@ -89,3 +89,28 @@ function photosphere_ws_add_methods($arr)
         array('admin_only' => true, 'post_only' => true)
     );
 }
+
+function photosphere_ws_images_setInfo($res, $methodName, $params)
+{
+    if ($methodName != 'pwg.images.setInfo') {
+        return $res;
+    }
+    if (!isset($_POST['is_sphere'])) {
+        return $res;
+    }
+    if (empty($params['image_id'])) {
+        return $res;
+    }
+
+    if ($_POST['is_sphere'] != '0' && $_POST['is_sphere'] != '1') {
+        return new PwgError(WS_ERR_INVALID_PARAM, 'is_sphere must be 0 or 1');
+    }
+
+    single_update(
+        IMAGES_TABLE,
+        array('is_sphere' => intval($_POST['is_sphere'])),
+        array('id' => $params['image_id']),
+    );
+
+    return $res;
+}

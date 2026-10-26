@@ -26,8 +26,7 @@ if (basename(dirname(__FILE__)) != 'PhotoSphere')
 
 global $prefixeTable;
 
-define('PHOTOSPHERE_PATH' , PHPWG_PLUGINS_PATH . 'PhotoSphere/');
-define('PHOTOSPHERE_ADMIN', get_root_url() . 'admin.php?page=plugin-PhotoSphere');
+define('PHOTOSPHERE_PATH', PHPWG_PLUGINS_PATH . 'PhotoSphere/');
 define('PHOTOSPHERE_LINKS_TABLE', $prefixeTable . 'photosphere_links');
 define('PHOTOSPHERE_VERSION', '5.15.1');
 define('PHOTOSPHERE_THREE_VERSION', '0.185.1');
@@ -43,17 +42,17 @@ function photosphere_init()
 if (defined('IN_ADMIN'))
 {
   $admin_file = PHOTOSPHERE_PATH . 'include/admin_events.inc.php';
-  
-  add_event_handler('get_admin_plugin_menu_links', 'photosphere_admin_plugin_menu_links',
+
+  add_event_handler('loc_end_picture_modify', 'photosphere_loc_end_picture_modify',
     EVENT_HANDLER_PRIORITY_NEUTRAL, $admin_file);
 
-  add_event_handler('loc_end_picture_modify', 'photosphere_photo_page',
+  add_event_handler('tabsheet_before_select', 'photosphere_tabsheet_before_select',
     EVENT_HANDLER_PRIORITY_NEUTRAL, $admin_file);
 
-  add_event_handler('get_batch_manager_prefilters', 'photosphere_add_prefilter',
+  add_event_handler('get_batch_manager_prefilters', 'photosphere_get_batch_manager_prefilters',
     EVENT_HANDLER_PRIORITY_NEUTRAL, $admin_file);
     
-  add_event_handler('perform_batch_manager_prefilters', 'photosphere_apply_prefilter',
+  add_event_handler('perform_batch_manager_prefilters', 'photosphere_perform_batch_manager_prefilters',
     EVENT_HANDLER_PRIORITY_NEUTRAL, $admin_file);
     
   add_event_handler('loc_end_element_set_global', 'photosphere_loc_end_element_set_global',
@@ -62,15 +61,18 @@ if (defined('IN_ADMIN'))
   add_event_handler('element_set_global_action', 'photosphere_element_set_global_action',
     EVENT_HANDLER_PRIORITY_NEUTRAL, $admin_file);
 
-  add_event_handler('tabsheet_before_select', 'photosphere_photo_add_tab',
-    EVENT_HANDLER_PRIORITY_NEUTRAL, $admin_file);
+  add_event_handler('loc_end_element_set_unit', 'photosphere_loc_end_element_set_unit',
+    EVENT_HANDLER_PRIORITY_NEUTRAL - 1, $admin_file);
 }
 else if (defined('IN_WS'))
 {
   $ws_file = PHOTOSPHERE_PATH . 'include/ws_events.inc.php';
 
   add_event_handler('ws_add_methods', 'photosphere_ws_add_methods', 
-    EVENT_HANDLER_PRIORITY_NEUTRAL+1, $ws_file);
+    EVENT_HANDLER_PRIORITY_NEUTRAL, $ws_file);
+
+  add_event_handler('ws_invoke_allowed', 'photosphere_ws_images_setInfo',
+    EVENT_HANDLER_PRIORITY_NEUTRAL, $ws_file);
 }
 else
 {
