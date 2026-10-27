@@ -8,17 +8,17 @@
 {combine_css path="`$PHOTOSPHERE_PATH`template/marker.css"}
 
 {html_head}
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@photo-sphere-viewer/core@{$PHOTOSPHERE_VERSION}/index.min.css" />
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@photo-sphere-viewer/markers-plugin@{$PHOTOSPHERE_VERSION}/index.min.css" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@photo-sphere-viewer/core@5.15.1/index.min.css" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@photo-sphere-viewer/markers-plugin@5.15.1/index.min.css" />
 <link rel="stylesheet" href="{$ROOT_URL}{$PHOTOSPHERE_PATH}admin/editor/index.css" />
 {/html_head}
 
 <script type="importmap">
     {
         "imports": {
-            "three": "https://cdn.jsdelivr.net/npm/three@{$PHOTOSPHERE_THREE_VERSION}/build/three.module.min.js",
-            "@photo-sphere-viewer/core": "https://cdn.jsdelivr.net/npm/@photo-sphere-viewer/core@{$PHOTOSPHERE_VERSION}/index.module.min.js",
-            "@photo-sphere-viewer/markers-plugin": "https://cdn.jsdelivr.net/npm/@photo-sphere-viewer/markers-plugin@{$PHOTOSPHERE_VERSION}/index.module.min.js"
+            "three": "https://cdn.jsdelivr.net/npm/three@0.185.1/build/three.module.min.js",
+            "@photo-sphere-viewer/core": "https://cdn.jsdelivr.net/npm/@photo-sphere-viewer/core@5.15.1/index.module.min.js",
+            "@photo-sphere-viewer/markers-plugin": "https://cdn.jsdelivr.net/npm/@photo-sphere-viewer/markers-plugin@5.15.1/index.module.min.js"
         }
     }
 </script>

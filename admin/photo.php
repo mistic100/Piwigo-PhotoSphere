@@ -66,8 +66,6 @@ WHERE image_id = ' . $image_id . '
 $template->assign(array(
     'PWG_TOKEN' => get_pwg_token(),
     'PHOTOSPHERE_PATH' => PHOTOSPHERE_PATH,
-    'PHOTOSPHERE_VERSION' => PHOTOSPHERE_VERSION,
-    'PHOTOSPHERE_THREE_VERSION' => PHOTOSPHERE_THREE_VERSION,
     'PHOTOSPHERE_TOUR_LANG' => $lang['photosphere_tour'],
     'PHOTOSPHERE_CONFIG' => $conf['PhotoSphere'],
     'TITLE' => render_element_name($picture),
