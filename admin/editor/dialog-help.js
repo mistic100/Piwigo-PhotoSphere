@@ -1,4 +1,4 @@
-import { rootUrl, translate } from './data.js';
+import { langCode, rootUrl, translate } from './data.js';
 
 export class PhotoSphereEditorDialogHelp extends HTMLDialogElement {
     /** @type {HTMLElement} */
@@ -22,7 +22,7 @@ export class PhotoSphereEditorDialogHelp extends HTMLDialogElement {
     #render() {
         this.innerHTML = `
         <header>
-            <h3>Photo Sphere help</h3>
+            <h3>${translate('Help Me')} › Photo Sphere</h3>
 
             <button class="buttonLike" title="${translate('Close')}" data-close>
                 <i class="icon-cancel"></i>
@@ -42,7 +42,8 @@ export class PhotoSphereEditorDialogHelp extends HTMLDialogElement {
 
         if (!this.#loaded) {
             const baseUrl = rootUrl() + 'plugins/PhotoSphere/admin/editor/help/';
-            const res = await fetch(baseUrl + 'index.html');
+            const lang = langCode().startsWith('fr') ? 'fr' : 'en';
+            const res = await fetch(baseUrl + lang + '.html');
             const body = await res.text();
 
             this.#content.innerHTML = body.replace(/{ROOT_URL}/g, rootUrl()).replace(/{BASE_URL}/g, baseUrl);

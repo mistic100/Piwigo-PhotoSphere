@@ -88,6 +88,11 @@ export function categories() {
     return data.categories;
 }
 
+/** @return {string} */
+export function langCode() {
+    return data.lang['lang_code'];
+}
+
 export function translate(k, ...args) {
     let message = data.lang[k] || k;
     for (let i = 0; i < args.length; i++) {

@@ -9,9 +9,10 @@ $image_id = $_GET['image_id'];
 $admin_photo_base_url = get_root_url() . 'admin.php?page=photo-' . $image_id;
 $self_url = get_root_url() . 'admin.php?page=plugin-PhotoSphere-photo&amp;image_id=' . $image_id;
 
-global $template, $page, $conf, $lang;
+global $template, $page, $conf, $lang, $user;
 
 // transfer translations to js component
+$lang['photosphere_tour']['lang_code'] = $user['language'];
 $lang['photosphere_tour']['Linked photos'] = $lang['Linked photos'];
 $lang['photosphere_tour']['Help Me'] = $lang['Help Me'];
 $lang['photosphere_tour']['Photo title'] = $lang['Photo title'];
