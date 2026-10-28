@@ -34,8 +34,10 @@
     const tourConfig = {$PhotoSphere.tour|json_encode};
     {/if}
 
+    const container = document.querySelector('#photoSphere');
+
     const viewer = new Viewer({
-        container: 'photoSphere',
+        container: container,
         adapter: [EquirectangularAdapter, { shader:true }],
         panorama: '{$SPHERE_DERIVATIVE}',
         ...({$SPHERE_CONFIG|json_encode}),
@@ -100,20 +102,9 @@
       {/if}
     }, { once: true });
 
-    var $theImg = $('#theImage');
-    var $sphere = $('#photoSphere');
+    container.style.height = `calc(100vh - ${'{'}container.getBoundingClientRect().top}px - 10px)`;
 
     function resize() {
-      const width = $theImg.width() - 10;
-      const maxHeight = Math.max(document.documentElement.clientHeight, window.innerHeight || 0)
-        - $theImg.offset().top 
-        - ($theImg.outerHeight(true) - $theImg.height()) / 2
-        - 10;
-
-      $sphere.css({
-        height: Math.min(width * 0.7, maxHeight)
-      });
-
       viewer?.autoSize();
     }
 
