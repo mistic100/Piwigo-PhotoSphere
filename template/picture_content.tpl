@@ -5,11 +5,11 @@
 <div id="loupe_image" style="display:none"></div>
 
 {html_head}
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@photo-sphere-viewer/core@5.15.1/index.min.css" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@photo-sphere-viewer/core@{$VERSION_PHOTOSPHERE_LIB}/index.min.css" />
 {/html_head}
 {if !empty($LINKS)}
 {html_head}
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@photo-sphere-viewer/markers-plugin@5.15.1/index.min.css" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@photo-sphere-viewer/markers-plugin@{$VERSION_PHOTOSPHERE_LIB}/index.min.css" />
 {/html_head}
 {combine_script id='photo-sphere-marker' load='footer' path="`$PHOTOSPHERE_PATH`template/marker.js"}
 {combine_css path="`$PHOTOSPHERE_PATH`template/marker.css"}
@@ -18,10 +18,10 @@
 <script type="importmap">
     {
         "imports": {
-            "three": "https://cdn.jsdelivr.net/npm/three@0.185.1/build/three.module.min.js",
-            "@photo-sphere-viewer/core": "https://cdn.jsdelivr.net/npm/@photo-sphere-viewer/core@5.15.1/index.module.min.js",
-            "@photo-sphere-viewer/autorotate-plugin": "https://cdn.jsdelivr.net/npm/@photo-sphere-viewer/autorotate-plugin@5.15.1/index.module.min.js",
-            "@photo-sphere-viewer/markers-plugin": "https://cdn.jsdelivr.net/npm/@photo-sphere-viewer/markers-plugin@5.15.1/index.module.min.js"
+            "three": "https://cdn.jsdelivr.net/npm/three@{$VERSION_THREEJS_LIB}/build/three.module.min.js",
+            "@photo-sphere-viewer/core": "https://cdn.jsdelivr.net/npm/@photo-sphere-viewer/core@{$VERSION_PHOTOSPHERE_LIB}/index.module.min.js",
+            "@photo-sphere-viewer/autorotate-plugin": "https://cdn.jsdelivr.net/npm/@photo-sphere-viewer/autorotate-plugin@{$VERSION_PHOTOSPHERE_LIB}/index.module.min.js",
+            "@photo-sphere-viewer/markers-plugin": "https://cdn.jsdelivr.net/npm/@photo-sphere-viewer/markers-plugin@{$VERSION_PHOTOSPHERE_LIB}/index.module.min.js"
         }
     }
 </script>

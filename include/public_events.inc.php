@@ -111,6 +111,8 @@ function photosphere_element_content($content, $element)
       'DEFAULT_POSITION' => $DEFAULT_POSITION,
       'LINKS' => photosphere_get_linked($element['id']),
       'PHOTOSPHERE_PATH' => PHOTOSPHERE_PATH,
+      'VERSION_PHOTOSPHERE_LIB' => VERSION_PHOTOSPHERE_LIB,
+      'VERSION_THREEJS_LIB' => VERSION_THREEJS_LIB,
     ));
 
     return $template->parse('sphere_content', true);

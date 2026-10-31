@@ -28,6 +28,8 @@ global $prefixeTable;
 
 define('PHOTOSPHERE_PATH', PHPWG_PLUGINS_PATH . 'PhotoSphere/');
 define('PHOTOSPHERE_LINKS_TABLE', $prefixeTable . 'photosphere_links');
+define('VERSION_PHOTOSPHERE_LIB', '5.15.1');
+define('VERSION_THREEJS_LIB', '0.185.1');
 
 
 add_event_handler('init', 'photosphere_init');
