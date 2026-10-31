@@ -8,6 +8,7 @@ class PhotoSphere_maintain extends PluginMaintain
     'psv_config' => '{}',
     'display_help' => true,
     'auto_anim' => true,
+    'anim_speed' => 'medium',
     'display_icon' => true,
     'tour' => array(
       'link_mode' => 'thumbnail',
@@ -36,6 +37,10 @@ class PhotoSphere_maintain extends PluginMaintain
       $update = false;
       if (!array_key_exists('psv_config', $conf['PhotoSphere'])) {
         $conf['PhotoSphere']['psv_config'] = $this->default_conf['psv_config'];
+        $update = true;
+      }
+      if (!array_key_exists('anim_speed', $conf['PhotoSphere'])) {
+        $conf['PhotoSphere']['anim_speed'] = $this->default_conf['anim_speed'];
         $update = true;
       }
       if (!array_key_exists('tour', $conf['PhotoSphere'])) {

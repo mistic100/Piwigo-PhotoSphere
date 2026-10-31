@@ -29,6 +29,16 @@
         </label>
       </li>
       <li>
+        <label>
+          {'Animation speed'|translate} :
+          <select name="anim_speed">
+            <option value="slow" {if $PhotoSphere.anim_speed == 'slow'}selected{/if}>{'Slow'|translate}</option>
+            <option value="medium" {if $PhotoSphere.anim_speed == 'medium'}selected{/if}>{'Medium'|translate}</option>
+            <option value="fast" {if $PhotoSphere.anim_speed == 'fast'}selected{/if}>{'Fast'|translate}</option>
+          </select>
+        </label>
+      </li>
+      <li>
         <label class="font-checkbox">
           <span class="icon-check"></span>
           <input type="checkbox" name="display_icon" {if $PhotoSphere.display_icon} checked="checked" {/if}>

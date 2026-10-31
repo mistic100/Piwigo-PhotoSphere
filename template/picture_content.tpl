@@ -36,6 +36,11 @@
 
     const container = document.querySelector('#photoSphere');
 
+    let autoAnim = {$PhotoSphere.auto_anim|json_encode};
+    if (autoAnim && localStorage.photoSphereAutoAnim) {
+      autoAnim = localStorage.photoSphereAutoAnim === 'true';
+    }
+
     const viewer = new Viewer({
         container: container,
         adapter: [EquirectangularAdapter, { shader:true }],
@@ -59,9 +64,9 @@
         },
         plugins: [
             [AutorotatePlugin, {
-              autorotateSpeed: '1.5rpm',
-              autostartDelay: {if $PhotoSphere.auto_anim}2000{else}null{/if},
-              autostartOnIdle: {if $PhotoSphere.auto_anim}true{else}false{/if},
+              autorotateSpeed: '{if $PhotoSphere.anim_speed == "slow"}0.75{else if $PhotoSphere.anim_speed == "fast"}3{else}1.5{/if}rpm',
+              autostartDelay: autoAnim ? 2000 : null,
+              autostartOnIdle: autoAnim,
             }],
             {if !empty($LINKS)}
             [MarkersPlugin, {
@@ -71,6 +76,12 @@
         ],
         ...({$PhotoSphere.psv_config})
     });
+
+    {if $PhotoSphere.auto_anim}
+    viewer.getPlugin(AutorotatePlugin).addEventListener('autorotate', ({ autorotateEnabled }) => {
+      localStorage.photoSphereAutoAnim = autorotateEnabled;
+    });
+    {/if}
 
     {if !empty($LINKS)}
     const markersPlugin = viewer.getPlugin(MarkersPlugin);
@@ -96,9 +107,7 @@
 
       {if !empty($LINKS)}
       const links = {$LINKS|json_encode};
-      links.forEach(link => {
-        markersPlugin.addMarker(PhotoSphereMarkerElement.build(link, tourConfig));
-      });
+      markersPlugin.setMarkers(links.map(link => PhotoSphereMarkerElement.build(link, tourConfig)));
       {/if}
     }, { once: true });
 

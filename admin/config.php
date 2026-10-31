@@ -12,6 +12,7 @@ if (isset($_POST['submit'])) {
         'psv_config' => trim(stripslashes($_POST['psv_config'])),
         'display_help' => isset($_POST['display_help']),
         'auto_anim' => isset($_POST['auto_anim']),
+        'anim_speed' => trim($_POST['anim_speed']),
         'display_icon' => isset($_POST['display_icon']),
         'tour' => array(
             'link_mode' => $_POST['tour_link_mode'],

@@ -3,6 +3,10 @@
 $lang['photosphere_config_intro'] = 'Pour activer Photo Sphere sur une photo, cochez "Photo Sphere" sur sa page de propriétés. Vous pouvez aussi utiliser le gestionnaire par lot ou l\'Édition rapide du plugin Admin Tools.';
 $lang['Display help message'] = 'Afficher le message d\'aide';
 $lang['Automatically launch animation'] = 'Démarrer automatiquement l\'animation';
+$lang['Animation speed'] = 'Vitesse de l\'animation';
+$lang['Slow'] = 'Lent';
+$lang['Medium'] = 'Moyen';
+$lang['Fast'] = 'Rapide';
 $lang['Display Photo Sphere icon on thumbnails list'] = 'Afficher le logo Photo Sphere sur les miniatures';
 $lang['Not compatible with all themes/plugins.'] = 'Pas compatible avec tous les thèmes/plugins.';
 $lang['Sphere texture size'] = 'Taille de la texture';
