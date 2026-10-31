@@ -4,8 +4,9 @@ $lang['photosphere_config_intro'] = 'To enable Photo Sphere on a photo, check "P
 $lang['Display help message'] = 'Display help message';
 $lang['Automatically launch animation'] = 'Automatically launch animation';
 $lang['Display Photo Sphere icon on thumbnails list'] = 'Display Photo Sphere icon on thumbnails list';
+$lang['Not compatible with all themes/plugins.'] = 'Not compatible with all themes/plugins.';
 $lang['Sphere texture size'] = 'Sphere texture size';
-$lnag['photosphere_texturesize_description'] = 'Between 1024px and 8192px. Bigger textures will take longer to load but smaller textures will result in blurry sphere.';
+$lang['photosphere_texturesize_description'] = 'Between 1024px and 8192px. Bigger textures will take longer to load but smaller textures will result in blurry sphere.';
 $lang['Additional configuration'] = 'Additional configuration';
 $lang['photosphere_config_description'] = 'Additional configuration in JSON format. Please refer to the <a href="https://photo-sphere-viewer.js.org/guide/config.html">library documentation</a> for available options.<br><b>WARNING:</b> an incorrect or malformed configuration will break the viewer.';
 $lang['Virtual tour'] = 'Virtual tour';

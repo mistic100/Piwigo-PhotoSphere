@@ -15,7 +15,7 @@
     <ul>
       <li>
         <label class="font-checkbox">
-          <span class="icon-check{if not $PhotoSphere.display_help}-empty{/if}"></span>
+          <span class="icon-check"></span>
           <input type="checkbox" name="display_help" {if $PhotoSphere.display_help} checked="checked" {/if}>
           {'Display help message'|translate}
         </label>
@@ -23,17 +23,18 @@
       </li>
       <li>
         <label class="font-checkbox">
-          <span class="icon-check{if not $PhotoSphere.auto_anim}-empty{/if}"></span>
+          <span class="icon-check"></span>
           <input type="checkbox" name="auto_anim" {if $PhotoSphere.auto_anim} checked="checked" {/if}>
           {'Automatically launch animation'|translate}
         </label>
       </li>
       <li>
         <label class="font-checkbox">
-          <span class="icon-check{if not $PhotoSphere.display_icon}-empty{/if}"></span>
+          <span class="icon-check"></span>
           <input type="checkbox" name="display_icon" {if $PhotoSphere.display_icon} checked="checked" {/if}>
           {'Display Photo Sphere icon on thumbnails list'|translate}
         </label>
+        <span style="font-size:0.8em;">({'Not compatible with all themes/plugins.'|translate})</span>
       </li>
       <li>
         <label>

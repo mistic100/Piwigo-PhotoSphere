@@ -4,6 +4,7 @@ $lang['photosphere_config_intro'] = 'Pour activer Photo Sphere sur une photo, co
 $lang['Display help message'] = 'Afficher le message d\'aide';
 $lang['Automatically launch animation'] = 'Démarrer automatiquement l\'animation';
 $lang['Display Photo Sphere icon on thumbnails list'] = 'Afficher le logo Photo Sphere sur les miniatures';
+$lang['Not compatible with all themes/plugins.'] = 'Pas compatible avec tous les thèmes/plugins.';
 $lang['Sphere texture size'] = 'Taille de la texture';
 $lang['photosphere_texturesize_description'] = 'Entre 1024px et 8192px. Des textures plus grosses prendrons plus de temps à charger mais des textures trop petites donneront une sphère floue.';
 $lang['Additional configuration'] = 'Configuration additionnelle';
