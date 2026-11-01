@@ -10,3 +10,4 @@ $lang['Move up'] = '위로 이동';
 $lang['Zoom'] = '확대/축소';
 $lang['Zoom in'] = '확대';
 $lang['Zoom out'] = '축소';
+$lang['Linked photos'] = '연결된 사진';
