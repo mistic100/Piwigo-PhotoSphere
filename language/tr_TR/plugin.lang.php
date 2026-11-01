@@ -10,3 +10,4 @@ $lang['Move down'] = 'Aşağıya taşı';
 $lang['Move left'] = 'Sola taşı';
 $lang['Move right'] = 'Sağa taşı';
 $lang['Move up'] = 'Yukarıya taşı';
+$lang['Linked photos'] = 'Bağlantılı fotoğraflar';
