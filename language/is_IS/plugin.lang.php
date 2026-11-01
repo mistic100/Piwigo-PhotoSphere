@@ -10,3 +10,4 @@ $lang['Move down'] = 'Færa niður';
 $lang['Move left'] = 'Færa til vinstri';
 $lang['Move right'] = 'Færa til hægri';
 $lang['Move up'] = 'Færa upp';
+$lang['Linked photos'] = 'Tengdar myndir';
