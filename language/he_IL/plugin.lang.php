@@ -10,3 +10,4 @@ $lang['Move up'] = 'הזז למעלה';
 $lang['Zoom'] = 'התקרב';
 $lang['Zoom in'] = 'התקרב יותר';
 $lang['Zoom out'] = 'התרחק';
+$lang['Linked photos'] = 'תמונות מקושרות';
