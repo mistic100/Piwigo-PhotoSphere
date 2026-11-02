@@ -10,3 +10,4 @@ $lang['Move down'] = 'Flyt nedad';
 $lang['Move left'] = 'Flyt til venstre';
 $lang['Move right'] = 'Flyt til højre';
 $lang['Move up'] = 'Flyt opad';
+$lang['Linked photos'] = 'Linkede fotografier';
