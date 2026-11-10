@@ -10,3 +10,4 @@ $lang['Move down'] = 'Posunúť nadol';
 $lang['Move left'] = 'Presun doľava';
 $lang['Move right'] = 'Pohyb doprava';
 $lang['Move up'] = 'Posunúť nahor';
+$lang['Linked photos'] = 'Priložené fotografie';
