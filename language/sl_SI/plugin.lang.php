@@ -10,3 +10,4 @@ $lang['Move down'] = 'Premakni navzdol';
 $lang['Move left'] = 'Premakni levo';
 $lang['Move right'] = 'Premakni desno';
 $lang['Move up'] = 'Premakni navzgor';
+$lang['Linked photos'] = 'Povezane fotografije';
