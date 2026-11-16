@@ -10,3 +10,4 @@ $lang['Move down'] = 'Przesuń w dół';
 $lang['Move left'] = 'Przesuń w lewo';
 $lang['Move right'] = 'Przesuń w prawo';
 $lang['Move up'] = 'Przesuń w górę';
+$lang['Linked photos'] = 'Powiązane zdjęcia';
