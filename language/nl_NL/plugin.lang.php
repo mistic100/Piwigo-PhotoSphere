@@ -10,3 +10,4 @@ $lang['Move down'] = 'Ga naar beneden';
 $lang['Move left'] = 'Ga naar links';
 $lang['Move right'] = 'Ga naar rechts';
 $lang['Move up'] = 'Ga naar boven';
+$lang['Linked photos'] = 'Gekoppelde foto\'s';
